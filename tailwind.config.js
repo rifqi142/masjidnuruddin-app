@@ -1,18 +1,65 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      colors: {
+        green: {
+          10: "#C5FCEE",
+          20: "#4EAF9B",
+          25: "#047C6A",
+          30: "#007A68",
+          50: "#00716D",
+          70: "#00676D",
+          90: "#145C6A",
+          100: "#255262",
+          120: "#2F4858",
+        },
+        gray: {
+          10: "#EEEEEE",
+          20: "#d6d6d6",
+          30: "#7B7B7B",
+          50: "#585858",
+          90: "#141414",
+        },
+        dark: {
+          50: "#222831",
+        },
+        orange: {
+          50: "#FF814C",
+        },
+        blue: {
+          70: "#021639",
+        },
+        yellow: {
+          50: "#F1EFBE",
+          70: "#F9CC6C",
+          90: "#AE9C4C",
+        },
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "bg-img-1": "url('/img-1.png')",
+        "bg-img-2": "url('/img-2.png')",
+        "feature-bg": "url('/feature-bg.png')",
+        pattern: "url('/pattern.png')",
+        "pattern-2": "url('/pattern-bg.png')",
+      },
+      screens: {
+        xs: "400px",
+        "3xl": "1680px",
+        "4xl": "2200px",
+      },
+      maxWidth: {
+        "10xl": "1512px",
+      },
+      borderRadius: {
+        "5xl": "40px",
       },
     },
   },
   plugins: [],
-}
+};
