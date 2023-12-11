@@ -1,9 +1,12 @@
+import { getAlquranResponse } from "@/libs/api-libs";
 import Image from "next/image";
 import React from "react";
+import AlQuranList from "../AlQuranList";
 import AyatPilihan from "./AyatPilihan";
 import InputSearch from "./InputSearch";
 
-const AlQuran = () => {
+const AlQuran = async () => {
+  const getAlquran = await getAlquranResponse("surat");
   return (
     <div className="bg-alquran">
       <div className="flex flex-col items-center">

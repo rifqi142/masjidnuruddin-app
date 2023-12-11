@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <>
       <div className="bg-green-30 h-12 flex items-center text-center relative overflow-x-hidden">
-        <div className="animate-marquee slow-animate-marquee text-gray-20 align-middle items-center whitespace-nowrap">
+        <div className="animate-marquee slow-animate-marquee text-gray-20 whitespace-nowrap">
           <ul>
             <li>
               Website Masjid Nuruddin Jakarta- Jl. H. Sa'aba No.7, RT.8/RW.3,
@@ -39,7 +39,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <nav className="flexBetween max-container padding-container relative z-30 py-3">
+      <nav className="flexBetween max-container padding-container z-30 py-3 sticky">
         <Link href="/">
           <Image src="/logo-masjid.png" alt="logo" width={100} height={29} />
         </Link>

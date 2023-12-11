@@ -91,6 +91,14 @@
   @apply text-[14px] font-[400];
 }
 
+.regular-12 {
+  @apply text-[12px] font-[400];
+}
+
+.regular-10 {
+  @apply text-[10px] font-[400];
+}
+
 .medium-14 {
   @apply text-[14px] font-[600];
 }
@@ -127,6 +135,14 @@
   @apply text-[16px] font-[700];
 }
 
+.bold-12 {
+  @apply text-[14px] font-[700];
+}
+
+.bold-12 {
+  @apply text-[12px] font-[700];
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(100%);
@@ -146,14 +162,41 @@
 
 .bg-alquran {
   background-image: url("/bg-alquran.png");
-  background-size: cover; /* or background-size: contain; depending on your needs */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 55vh;
 }
 
+.frame-surat {
+  /* background-image: url("/frame-quran.png"); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.truncate-text {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media screen and (max-width: 768px) {
   .bg-alquran {
     height: 90vh;
+  }
+  .slow-animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  .stop-animate-marquee {
+    animation-play-state: paused;
+  }
+
+  .frame-surat {
+    margin-top: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
   }
 }

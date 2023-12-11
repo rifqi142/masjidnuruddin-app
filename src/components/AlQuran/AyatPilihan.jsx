@@ -4,7 +4,7 @@ import React from "react";
 
 const AyatPilihan = () => {
   return (
-    <div className="flexCenter gap-3 flex-wrap mt-5">
+    <div className="flexCenter gap-3 mt-5 flex-wrap">
       {AYAT_KHUSUS.map((ayat) => (
         <Link
           href={ayat.href}

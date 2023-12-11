@@ -24,7 +24,7 @@ const InputSearch = () => {
       <div className="flex justify-center mx-10">
         <input
           placeholder="Surat apa yang mau anda baca? (contoh: Al-Fatihah)"
-          className="p-3 max-w-7xl rounded-lg text-sm content-center
+          className="p-4 max-w-5xl rounded-lg text-sm content-center
           focus:outline-none focus:shadow-xl w-full sm:mx-14"
           ref={searchRef}
           onKeyDown={handleSearch}
