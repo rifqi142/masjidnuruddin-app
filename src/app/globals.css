@@ -168,18 +168,48 @@
   height: 55vh;
 }
 
-.frame-surat {
-  /* background-image: url("/frame-quran.png"); */
+/* .frame-surat {
+  background-image: url("/frame-quran.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 .truncate-text {
   max-width: 250px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.social-media {
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+}
+
+.instagram {
+  background-image: url("/instagram.svg");
+}
+
+.instagram:hover {
+  background-image: url("/instagram-after.svg");
+}
+
+.facebook {
+  background-image: url("/facebook.svg");
+}
+
+.facebook:hover {
+  background-image: url("/facebook-after.svg");
+}
+
+.twitter {
+  background-image: url("/twitter.svg");
+}
+
+.twitter:hover {
+  background-image: url("/twitter-after.svg");
 }
 
 @media screen and (max-width: 768px) {

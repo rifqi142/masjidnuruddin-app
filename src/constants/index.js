@@ -15,3 +15,13 @@ export const AYAT_KHUSUS = [
   { href: "/", key: "5", label: "Al-Wāqi‘ah" },
   { href: "/", key: "6", label: "Ar-Raḥmān" },
 ];
+
+export const MENU_FOOTER = [
+  { href: "/", key: "1", label: "Beranda" },
+  { href: "/", key: "2", label: "Tentang Kami" },
+  { href: "/", key: "3", label: "Program Dakhwah" },
+  { href: "/", key: "4", label: "Kajian" },
+  { href: "/", key: "5", label: "Baca Al-Qur'an" },
+  { href: "/", key: "6", label: "Infaq Masjid" },
+  { href: "/", key: "7", label: "Donasi" },
+];
