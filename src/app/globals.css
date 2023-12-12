@@ -165,7 +165,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 55vh;
 }
 
 /* .frame-surat {
@@ -213,9 +212,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .bg-alquran {
-    height: 90vh;
-  }
   .slow-animate-marquee {
     animation: marquee 30s linear infinite;
   }

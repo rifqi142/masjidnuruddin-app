@@ -13,7 +13,7 @@ const AlQuranList = ({ api }) => {
               className="cursor-pointer text-color-primary transition-all"
             >
               <div
-                className="px-4 py-2 flex flex-row border border-green-70
+                className="px-2 md:px-4 py-2 flex flex-row border border-green-70
               relative rounded-lg shadow-xl gap-2 hover:border-4 hover:bg-white"
               >
                 <div className="text-white regular-18 md:mt-2 mt-4">
