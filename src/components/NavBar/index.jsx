@@ -2,8 +2,9 @@
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "../Button";
+import { useEffect } from "react";
 
 const NavBar = () => {
   useEffect(() => {
@@ -25,7 +26,6 @@ const NavBar = () => {
       marquee?.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
-
   return (
     <>
       <div className="bg-green-30 h-12 flex items-center text-center relative overflow-x-hidden">
@@ -39,9 +39,9 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <nav className="flexBetween max-container padding-container z-30 py-3 sticky">
+      <nav className="flexBetween max-container padding-container z-30 py-2 sticky top-0 bg-white">
         <Link href="/">
-          <Image src="/logo-masjid.png" alt="logo" width={100} height={29} />
+          <Image src="/logo-masjid.png" alt="logo" width={90} height={20} />
         </Link>
 
         <ul className="hidden h-full gap-6 lg:flex">
@@ -49,12 +49,10 @@ const NavBar = () => {
             <Link
               href={link.href}
               key={link.key}
-              className={`regular-16 text-green-30 flexCenter 
-                cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold ${
-                  link.className === "active"
-                    ? "border-b-2 border-b-green-20"
-                    : ""
-                }`}
+              className={`regular-16 xl:regular-14 text-green-30 flexCenter 
+        cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold ${
+          link.className === "active" ? "border-b-2 border-b-green-20" : ""
+        }`}
             >
               {link.label}
             </Link>

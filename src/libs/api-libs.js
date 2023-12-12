@@ -3,6 +3,6 @@ export const getAlquranResponse = async (resource, query) => {
     `${process.env.NEXT_PUBLIC_API_URL}/${resource}?${query}`
   );
 
-  const anime = await response.json();
-  return anime;
+  const alquran = await response.json();
+  return alquran;
 };

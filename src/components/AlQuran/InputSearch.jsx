@@ -21,16 +21,16 @@ const InputSearch = () => {
 
   return (
     <div className="mt-5">
-      <div className="flex justify-center mx-10">
+      <div className="flex justify-center mx-15 md:mx-10 pl-7 md:pl-0">
         <input
           placeholder="Surat apa yang mau anda baca? (contoh: Al-Fatihah)"
-          className="p-4 max-w-5xl rounded-lg text-sm content-center
-          focus:outline-none focus:shadow-xl w-full sm:mx-14"
+          className="p-3 max-w-5xl rounded-lg text-sm content-center
+          focus:outline-none focus:shadow-xl w-full"
           ref={searchRef}
           onKeyDown={handleSearch}
         />
         <button
-          className="ml-2 p-3 rounded-lg focus:outline-none focus:shadow-xl"
+          className="p-4 rounded-lg focus:outline-none focus:shadow-xl"
           onClick={handleSearch}
         ></button>{" "}
       </div>

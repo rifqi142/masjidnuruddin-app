@@ -8,12 +8,11 @@ export const NAV_LINKS = [
 ];
 
 export const AYAT_KHUSUS = [
-  { href: "/", key: "1", label: "Yasin" },
-  { href: "/", key: "2", label: "Ayat Kursi" },
-  { href: "/", key: "3", label: "Al-Kahf" },
-  { href: "/", key: "4", label: "Al-Mulk" },
-  { href: "/", key: "5", label: "Al-Wāqi‘ah" },
-  { href: "/", key: "6", label: "Ar-Raḥmān" },
+  { href: "/surat/36", key: "1", label: "Yasin" },
+  { href: "/surat/18", key: "2", label: "Al-Kahf" },
+  { href: "/surat/67", key: "3", label: "Al-Mulk" },
+  { href: "/surat/56", key: "4", label: "Al-Wāqi‘ah" },
+  { href: "/surat/55", key: "5", label: "Ar-Raḥmān" },
 ];
 
 export const MENU_FOOTER = [
