@@ -211,6 +211,11 @@
   background-image: url("/twitter-after.svg");
 }
 
+.audio-player::-webkit-media-controls-panel {
+  background-color: #ffc107;
+  justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
   .slow-animate-marquee {
     animation: marquee 30s linear infinite;
