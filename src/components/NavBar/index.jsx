@@ -39,9 +39,15 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <nav className="flexBetween max-container padding-container z-30 py-2 sticky top-0 bg-white">
+      <nav className="w-full flexBetween px-6 lg:px-20 z-30 py-2 sticky top-0 bg-white shadow-xl">
         <Link href="/">
-          <Image src="/logo-masjid.png" alt="logo" width={90} height={20} />
+          <Image
+            src="/logo-masjid.png"
+            alt="logo"
+            width={90}
+            height={20}
+            className=""
+          />
         </Link>
 
         <ul className="hidden h-full gap-6 lg:flex">

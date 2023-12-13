@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="py-2 md:py-8 bg-dark-30 mt-10 p-4 md:p-2">
-      <div className="flex justify-between mt-5 container mx-auto flex-col md:flex-row">
+    <footer className="py-2 bg-dark-30 mt-10 p-2 md:p-2">
+      <div className="flex justify-between mt-10 container mx-auto flex-col md:flex-row lg:px-20 xl:px-40">
         <div className="flex-1">
           <div className="flex flex-row">
             <Image
@@ -16,12 +16,12 @@ const Footer = () => {
               height={100}
               className="mr-4 w-16"
             />
-            <h1 className="text-white flexCenter text-lg md:text-2xl uppercase">
+            <h1 className="text-white flexCenter text-lg md:text-xl uppercase">
               Masjid Nuruddin
             </h1>
           </div>
 
-          <p className="text-white text-sm md:text-xl text-justify mt-10">
+          <p className="text-white text-sm text-justify mt-8">
             Selamat datang di Website Resmi Masjid Nuruddin. Mari kita
             bersama-sama membangun kebersamaan, toleransi, dan keberagaman.
             Jangan lupa untuk terus mendukung kegiatan keagamaan dan sosial di
@@ -30,7 +30,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex-1 md:ml-8 md:pl-16 mt-4">
-          <h4 className="font-bold text-lg md:text-2xl mb-4 text-white">
+          <h4 className="font-bold text-base md:text-lg mb-4 text-white">
             Menu
           </h4>
           <ul className="flex flex-col gap-3 ">
@@ -38,7 +38,7 @@ const Footer = () => {
               <Link
                 href={menu.href}
                 key={menu.key}
-                className="text-sm md:text-lg text-white hover:underline"
+                className="text-sm  text-white hover:underline"
               >
                 {menu.label}
               </Link>
@@ -46,14 +46,14 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex-1 md:ml-8 mt-4">
-          <h4 className="font-bold text-lg md:text-2xl mb-4 text-white">
+          <h4 className="font-bold text-base md:text-lg mb-4 text-white">
             Hubungi Kami
           </h4>
-          <p className="text-white text-justify text-sm md:text-lg">
+          <p className="text-white text-justify text-sm">
             Alamat: Jl. H. Sa'aba No.7, RT.8/RW.3, Kelurahan Meruya Selatan,
             Kecamatan Kembangan, Kota Jakarta Barat
           </p>
-          <p className="text-white mt-3 text-sm md:text-lg ">
+          <p className="text-white mt-3 text-sm">
             Telp. &nbsp;
             <a
               className="hover:underline"
@@ -70,7 +70,7 @@ const Footer = () => {
               &nbsp; 0856 9726 8979
             </a>
           </p>
-          <p className="text-white text-sm md:text-lg hover:underline mt-4">
+          <p className="text-white text-sm md:text-base hover:underline mt-4">
             Email:{" "}
             <a href="mailto:masjidnuruddin78@gmail.com">
               masjidnuruddin78@gmail.com
@@ -90,7 +90,7 @@ const Footer = () => {
           <div className="flex1- ml-8"></div>
         </div>
       </div>
-      <div className="bg-dark-40 p-3 mt-3 text-center text-white text-sm md:text-lg">
+      <div className="bg-dark-40 p-3 mt-3 text-center text-white text-sm md:text-base">
         <p>&copy; 2023 Masjid Nuruddin. All Rights Reserved.</p>
       </div>
     </footer>

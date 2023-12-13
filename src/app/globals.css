@@ -189,6 +189,8 @@
 
 .instagram {
   background-image: url("/instagram.svg");
+  height: 25px;
+  width: 25px;
 }
 
 .instagram:hover {
@@ -197,6 +199,8 @@
 
 .facebook {
   background-image: url("/facebook.svg");
+  height: 25px;
+  width: 25px;
 }
 
 .facebook:hover {
@@ -205,6 +209,8 @@
 
 .twitter {
   background-image: url("/twitter.svg");
+  height: 25px;
+  width: 25px;
 }
 
 .twitter:hover {
