@@ -77,14 +77,14 @@ const Footer = () => {
             </a>
           </p>
           <div className="flex mt-4 justify-center md:justify-start">
-            <a href="#" className="mr-4">
+            <a href="#" className="mr-4" aria-label="instagram">
               <div className="social-media instagram"></div>
             </a>
-            <a href="#" className="mr-4">
+            <a href="#" className="mr-4" aria-label="facebook">
               <div className="social-media facebook"></div>
             </a>
             <a href="#">
-              <div className="social-media twitter"></div>
+              <div className="social-media twitter" aria-label="twitter"></div>
             </a>
           </div>
           <div className="flex1- ml-8"></div>

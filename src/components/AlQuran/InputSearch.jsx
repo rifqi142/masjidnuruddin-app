@@ -32,6 +32,7 @@ const InputSearch = () => {
         <button
           className="p-4 rounded-lg focus:outline-none focus:shadow-xl"
           onClick={handleSearch}
+          aria-label="button-search"
         ></button>{" "}
       </div>
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 const AlQuranList = ({ api }) => {
   return (
-    <div className="flexCenter">
+    <div className="flexCenter mb-14">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10 w-max">
         {api.data?.map((alquran, index) => {
           return (

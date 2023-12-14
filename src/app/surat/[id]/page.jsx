@@ -1,13 +1,17 @@
 import React from "react";
 import { getAlquranResponse } from "@/libs/api-libs";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft, ArrowRight, Info } from "@phosphor-icons/react/dist/ssr";
 
 const DetailSurat = async ({ params: { id } }) => {
   const getDetailSurat = await getAlquranResponse(`surat/${id}`);
   const indexSurat = getDetailSurat.data.nomor;
+
+  const handlerButtonTafsir = () => {
+    // ketika button di klik akan muncul modals tafsir
+  };
   return (
-    <section className="px-2 md:px-16 py-5 bg-gray-10">
+    <section className="px-2 md:px-16 pt-5 pb-8 md:pb-14 bg-gray-10">
       <div className="w-full border-2 bg-green-30 rounded-2xl p-5 overflow-hidden">
         <div className="grid grid-cols-2 grid-rows-3">
           <div className="gap-2 md:row-span-2 md:col-span-1 col-span-2  ">
@@ -22,7 +26,7 @@ const DetailSurat = async ({ params: { id } }) => {
 
           <div className="col-span-2 md:row-span-2 md:col-span-1 flex items-end md:items-start justify-end  ">
             <Link href={`/tafsir/${id}`}>
-              <div className="bg-yellow-60 rounded-md md:w-28 font-bold p-2 text-center text-sm hover:bg-yellow-30">
+              <div className="bg-yellow-60 text-green-90 rounded-md md:w-28 font-bold p-2 text-center text-sm hover:bg-yellow-30">
                 Lihat Tafsir
               </div>
             </Link>
@@ -51,7 +55,7 @@ const DetailSurat = async ({ params: { id } }) => {
           >
             <div className="flex flex-row gap-2">
               <ArrowLeft size={23} />(
-              {getDetailSurat.data.suratSebelumnya.namaLatin}) Surah Sebelumnya
+              {getDetailSurat.data.suratSebelumnya.namaLatin}) Surat Sebelumnya
             </div>
           </Link>
         )}
@@ -62,7 +66,7 @@ const DetailSurat = async ({ params: { id } }) => {
             className="p-2 bg-green-30 rounded-lg h-10 flexCenter flex-1 hover:bg-green-50"
           >
             <div className="flex flex-row gap-2">
-              ({getDetailSurat.data.suratSelanjutnya.namaLatin}) Surah
+              ({getDetailSurat.data.suratSelanjutnya.namaLatin}) Surat
               Selanjutnya
               <ArrowRight size={23} />
             </div>
@@ -74,12 +78,15 @@ const DetailSurat = async ({ params: { id } }) => {
         {getDetailSurat.data.ayat.map((ayat, index) => (
           <div
             key={index}
-            className="w-full border-2 bg-white rounded-tr-lg rounded-bl-lg p-5 
+            className="w-full border-2 bg-white rounded-tl-md rounded-tr-2xl rounded-bl-2xl p-5 rounded-br-md
             overflow-hidden text-black mt-3 shadow-sm hover:shadow-lg"
           >
             <div className="flex flex-col">
               <h4 className="text-xl">
                 {indexSurat} : {ayat.nomorAyat}
+                <button className="text-green-30 px-2">
+                  <Info size={20} />
+                </button>
               </h4>
               <h1 className="text-3xl flexEnd mt-3 flex-wrap text-justify">
                 <span className="text-right text-[justify-last] leading-loose">
@@ -104,6 +111,7 @@ const DetailSurat = async ({ params: { id } }) => {
           </div>
         ))}
       </div>
+      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     </section>
   );
 };
