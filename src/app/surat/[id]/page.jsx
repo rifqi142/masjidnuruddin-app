@@ -18,7 +18,6 @@ import {
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -26,6 +25,7 @@ import {
 
 const DetailSurat = async ({ params: { id } }) => {
   const router = useRouter(); // Use the useRouter hook
+
   // Construct the full URL
   const suratUrl = `${process.env.NEXT_PUBLIC_API_URL}surat/${id}`;
   const tafsirUrl = `${process.env.NEXT_PUBLIC_API_URL}tafsir/${id}`;
@@ -54,9 +54,13 @@ const DetailSurat = async ({ params: { id } }) => {
     return textWithLineBreaks;
   };
 
+  const italicText = (text) => {
+    // Wrap the text inside <i> tags for italics
+    return text.replace(/<i>(.*?)<\/i>/g, (_, content) => `<i>${content}</i>`);
+  };
+
   const handleSelectItem = (item) => {
-    const suratNumber = item.nomor;
-    router.push(`/surat/${suratNumber}`);
+    router.push(`/surat/${item}`);
   };
 
   return (
@@ -64,10 +68,50 @@ const DetailSurat = async ({ params: { id } }) => {
       <section className="px-2 md:px-16 pt-5 pb-8 md:pb-14 bg-gray-10">
         <div className="w-full border-2 bg-green-30 rounded-2xl p-5 overflow-hidden">
           <div className="grid grid-cols-2 grid-rows-3">
-            <div className="gap-2 md:row-span-2 md:col-span-1 col-span-2  ">
-              <h2 className="text-xl sm:text-2xl font-bold text-white">
-                {getDetailSurat.data.namaLatin} - {getDetailSurat.data.nama}
-              </h2>
+            <div className="gap-2 md:row-span-2 md:col-span-1 col-span-2">
+              <div className="flex flex-row">
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
+                  {getDetailSurat.data.namaLatin} - {getDetailSurat.data.nama}
+                </h2>
+                {/* DIALOG */}
+                <p>
+                  <Dialog className="w-3 py-40 my-30">
+                    <DialogTrigger asChild className="text-white px-2">
+                      <button>
+                        <Info size={20} />
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="flex flex-col h-screen md:h-max mx-auto my-auto">
+                      <DialogHeader className="mb-1">
+                        <DialogTitle>
+                          Deskripsi dari Surat {getDetailSurat.data.namaLatin}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="flex-1 overflow-y-auto max-h-">
+                        <div className="text-sm mt-3 ">
+                          <p
+                            className="text-justify text-sm"
+                            dangerouslySetInnerHTML={{
+                              __html: italicText(getDetailSurat.data.deskripsi),
+                            }}
+                          ></p>
+                        </div>
+                      </div>
+                      <DialogFooter className="sm:justify-end">
+                        <DialogClose asChild>
+                          <Button
+                            type="button"
+                            variant="primary"
+                            className="bg-green-30 text-white"
+                          >
+                            Close
+                          </Button>
+                        </DialogClose>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                </p>
+              </div>
               <p className="capitalize text-sm sm:text-base text-gray-10">
                 {getDetailSurat.data.tempatTurun} •{" "}
                 {getDetailSurat.data.jumlahAyat} Ayat •{" "}
@@ -83,7 +127,7 @@ const DetailSurat = async ({ params: { id } }) => {
               </Link>
             </div>
 
-            <div className="col-span-2 mt-2  ">
+            <div className="col-span-2 mt-2">
               <audio
                 controls
                 className="audio-player bg-yellow-60 rounded-md w-full h-11 md:h-14 "
@@ -127,23 +171,19 @@ const DetailSurat = async ({ params: { id } }) => {
         </div>
         {/*  */}
         <div>
-          <h3>Pilih Surah: </h3>
-          <Select>
-            <SelectTrigger className="w-[280px] mt-5">
+          <h3 className="mt-3">Pilih Surah: </h3>
+          <Select onValueChange={handleSelectItem}>
+            <SelectTrigger className="w-[280px] mt-2">
               <SelectValue placeholder={getDetailSurat.data.namaLatin} />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup label="Surat">
-                {getAlquran.data.map((item, index) => (
-                  <SelectItem
-                    value={item.namaLatin}
-                    key={index}
-                    onSelect={() => router.push(`/surat/${item.nomor}`)}
-                  >
+              {getAlquran.data.map((item, index) => (
+                <SelectItem key={index} value={item.nomor}>
+                  <a onClick={() => handleSelectItem(item.nomor)}>
                     {item.namaLatin}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
+                  </a>
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
