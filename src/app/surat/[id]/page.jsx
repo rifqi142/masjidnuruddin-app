@@ -3,8 +3,11 @@ import { getAlquranResponse } from "@/libs/api-libs";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Info } from "@phosphor-icons/react/dist/ssr";
 
+import { Button } from "@/components/ui/button";
+
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -112,32 +115,48 @@ const DetailSurat = async ({ params: { id } }) => {
                     {indexSurat} : {ayat.nomorAyat}
                   </h4>
                   <p>
-                    <Dialog>
+                    <Dialog className="w-3 py-40 my-30">
                       <DialogTrigger asChild className="text-green-30 px-2">
                         <button>
                           <Info size={20} />
                         </button>
                       </DialogTrigger>
-                      <DialogContent className="max-h-[60vh] overflow-y-auto">
-                        <DialogHeader>
+                      <DialogContent className="flex flex-col h-screen mx-auto my-auto">
+                        <DialogHeader className="mb-1">
                           <DialogTitle>
                             Tafsir {namaLatin} Ayat {ayat.nomorAyat}
                           </DialogTitle>
-                          <DialogDescription>{ayat.teksArab}</DialogDescription>
                         </DialogHeader>
-                        <div className="text-sm">
-                          {getDetailTafsir.data.tafsir.map((tafsir, index) => (
-                            <div key={index}>
-                              <p className="text-justify text-sm">
-                                {" "}
-                                {renderTextWithLineBreaks(tafsir.teks)}
-                              </p>
-                            </div>
-                          ))}
+                        <div className="flex-1 overflow-y-auto max-h-">
+                          <div className="text-xl flexEnd flex-wrap text-justify text-black pr-3">
+                            <span className="text-right text-[justify-last] leading-loose mt-3">
+                              {ayat.teksArab}
+                            </span>
+                          </div>
+                          <div className="text-sm mt-3 ">
+                            {getDetailTafsir.data.tafsir.map(
+                              (tafsir, index) => (
+                                <div key={index}>
+                                  <p className="text-justify text-sm">
+                                    {" "}
+                                    {renderTextWithLineBreaks(tafsir.teks)}
+                                  </p>
+                                </div>
+                              )
+                            )}
+                          </div>
                         </div>
-                        {/* <DialogFooter>
-                          <button onClick={handleCloseDialog}>Tutup</button>
-                        </DialogFooter> */}
+                        <DialogFooter className="sm:justify-end">
+                          <DialogClose asChild>
+                            <Button
+                              type="button"
+                              variant="primary"
+                              className="bg-green-30 text-white"
+                            >
+                              Close
+                            </Button>
+                          </DialogClose>
+                        </DialogFooter>
                       </DialogContent>
                     </Dialog>
                   </p>
