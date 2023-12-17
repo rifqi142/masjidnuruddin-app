@@ -1,10 +1,11 @@
 import React from "react";
-import { getAlquranResponse } from "@/libs/api-libs";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 const DetailTafsir = async ({ params: { id } }) => {
-  const getDetailTafsir = await getAlquranResponse(`tafsir/${id}`);
+  const tafsirUrl = `${process.env.NEXT_PUBLIC_API_URL}/tafsir/${id}`;
+  const getDetailTafsirResponse = await fetch(tafsirUrl);
+  const getDetailTafsir = await getDetailTafsirResponse.json();
 
   const renderTextWithLineBreaks = (text) => {
     const textWithLineBreaks = text.split("\n").map((line, index) => (

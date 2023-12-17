@@ -1,30 +1,48 @@
+"use client";
 import React from "react";
-import { getAlquranResponse } from "@/libs/api-libs";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Info } from "@phosphor-icons/react/dist/ssr";
-
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const DetailSurat = async ({ params: { id } }) => {
-  const getDetailSurat = await getAlquranResponse(`surat/${id}`);
-  const getDetailTafsir = await getAlquranResponse(`tafsir/${id}`);
+  const router = useRouter(); // Use the useRouter hook
+  // Construct the full URL
+  const suratUrl = `${process.env.NEXT_PUBLIC_API_URL}surat/${id}`;
+  const tafsirUrl = `${process.env.NEXT_PUBLIC_API_URL}tafsir/${id}`;
+  const getAlquranUrl = `${process.env.NEXT_PUBLIC_API_URL}surat`;
+
+  // Fetch data using the full URL
+  const getDetailSuratResponse = await fetch(suratUrl);
+  const getDetailTafsirResponse = await fetch(tafsirUrl);
+  const getAlquranResponse = await fetch(getAlquranUrl);
+
+  // Parse the JSON responses
+  const getDetailSurat = await getDetailSuratResponse.json();
+  const getDetailTafsir = await getDetailTafsirResponse.json();
+  const getAlquran = await getAlquranResponse.json();
+
   const indexSurat = getDetailSurat.data.nomor;
   const namaLatin = getDetailSurat.data.namaLatin;
-
-  const handleCloseDialog = () => {
-    DialogTrigger.close();
-  };
 
   const renderTextWithLineBreaks = (text) => {
     const textWithLineBreaks = text.split("\n").map((line, index) => (
@@ -35,6 +53,12 @@ const DetailSurat = async ({ params: { id } }) => {
     ));
     return textWithLineBreaks;
   };
+
+  const handleSelectItem = (item) => {
+    const suratNumber = item.nomor;
+    router.push(`/surat/${suratNumber}`);
+  };
+
   return (
     <>
       <section className="px-2 md:px-16 pt-5 pb-8 md:pb-14 bg-gray-10">
@@ -101,7 +125,29 @@ const DetailSurat = async ({ params: { id } }) => {
             </Link>
           )}
         </div>
-
+        {/*  */}
+        <div>
+          <h3>Pilih Surah: </h3>
+          <Select>
+            <SelectTrigger className="w-[280px] mt-5">
+              <SelectValue placeholder={getDetailSurat.data.namaLatin} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup label="Surat">
+                {getAlquran.data.map((item, index) => (
+                  <SelectItem
+                    value={item.namaLatin}
+                    key={index}
+                    onSelect={() => router.push(`/surat/${item.nomor}`)}
+                  >
+                    {item.namaLatin}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+        {/*  */}
         <div className="mt-5">
           {getDetailSurat.data.ayat.map((ayat, index) => (
             <div
