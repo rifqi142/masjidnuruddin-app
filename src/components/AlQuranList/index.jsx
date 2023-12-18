@@ -8,7 +8,7 @@ const AlQuranList = ({ api }) => {
         {api.data?.map((alquran, index) => {
           return (
             <Link
-              href={`/surat/${alquran.nomor}`}
+              href={`/alquran/surat/${alquran.nomor}`}
               key={index}
               className="cursor-pointer text-color-primary transition-all"
             >

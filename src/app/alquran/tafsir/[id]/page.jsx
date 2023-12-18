@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Info } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import {
   Dialog,
   DialogClose,
@@ -12,10 +14,24 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const DetailTafsir = async ({ params: { id } }) => {
-  const tafsirUrl = `${process.env.NEXT_PUBLIC_API_URL}/tafsir/${id}`;
+  const router = useRouter();
+  const tafsirUrl = `${process.env.NEXT_PUBLIC_API_URL}tafsir/${id}`;
+  const getAlquranUrl = `${process.env.NEXT_PUBLIC_API_URL}surat`;
+
   const getDetailTafsirResponse = await fetch(tafsirUrl);
+  const getAlquranResponse = await fetch(getAlquranUrl);
+
   const getDetailTafsir = await getDetailTafsirResponse.json();
+  const getAlquran = await getAlquranResponse.json();
 
   const renderTextWithLineBreaks = (text) => {
     const textWithLineBreaks = text.split("\n").map((line, index) => (
@@ -32,6 +48,9 @@ const DetailTafsir = async ({ params: { id } }) => {
     return text.replace(/<i>(.*?)<\/i>/g, (_, content) => `<i>${content}</i>`);
   };
 
+  const handleSelectItem = (item) => {
+    router.push(`/alquran/tafsir/${item}`);
+  };
   return (
     <section className="px-2 md:px-16 pt-5 pb-8 md:pb-14 bg-gray-10">
       <div className="w-full border-2 bg-green-30 rounded-2xl p-5 overflow-hidden">
@@ -88,7 +107,7 @@ const DetailTafsir = async ({ params: { id } }) => {
           </div>
 
           <div className="col-span-2 md:row-span-2 md:col-span-1 flex items-end md:items-start justify-end  ">
-            <Link href={`/surat/${id}`}>
+            <Link href={`/alquran/surat/${id}`}>
               <div className="bg-yellow-60 text-green-90 rounded-md md:w-28 font-bold p-2 text-center text-sm hover:bg-yellow-30">
                 Lihat Surat
               </div>
@@ -101,7 +120,7 @@ const DetailTafsir = async ({ params: { id } }) => {
       <div className="mt-3 flex flex-col md:flex-row gap-2 text-white text-base justify-center ">
         {getDetailTafsir.data.suratSebelumnya === false ? null : (
           <Link
-            href={`/tafsir/${getDetailTafsir.data.suratSebelumnya.nomor}`}
+            href={`/alquran/tafsir/${getDetailTafsir.data.suratSebelumnya.nomor}`}
             className="p-2 bg-green-30 rounded-lg h-10 flexCenter flex-1 hover:bg-green-50 "
           >
             <div className="flex flex-row gap-2">
@@ -114,7 +133,7 @@ const DetailTafsir = async ({ params: { id } }) => {
 
         {getDetailTafsir.data.suratSelanjutnya === false ? null : (
           <Link
-            href={`/tafsir/${getDetailTafsir.data.suratSelanjutnya.nomor}`}
+            href={`/alquran/tafsir/${getDetailTafsir.data.suratSelanjutnya.nomor}`}
             className="p-2 bg-green-30 rounded-lg h-10 flexCenter flex-1 hover:bg-green-50"
           >
             <div className="flex flex-row gap-2">
@@ -124,6 +143,25 @@ const DetailTafsir = async ({ params: { id } }) => {
             </div>
           </Link>
         )}
+      </div>
+
+      {/*  */}
+      <div>
+        <h3 className="mt-3">Pilih Surah: </h3>
+        <Select onValueChange={handleSelectItem}>
+          <SelectTrigger className="w-[280px] mt-2">
+            <SelectValue placeholder={getDetailTafsir.data.namaLatin} />
+          </SelectTrigger>
+          <SelectContent>
+            {getAlquran.data.map((item, index) => (
+              <SelectItem key={index} value={item.nomor}>
+                <a onClick={() => handleSelectItem(item.nomor)}>
+                  {item.namaLatin}
+                </a>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="mt-5">

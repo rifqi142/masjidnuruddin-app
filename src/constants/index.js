@@ -5,7 +5,7 @@ export const NAV_LINKS = [
   { href: "/", key: "Program Dakwah", label: "PROGRAM DAKHWAH" },
   { href: "/", key: "Kajian ", label: "KAJIAN" },
   {
-    href: "/",
+    href: "/alquran",
     key: "Baca Al-Qur'an",
     label: "BACA AL-QURAN",
     className: "active",
@@ -13,11 +13,11 @@ export const NAV_LINKS = [
 ];
 
 export const AYAT_KHUSUS = [
-  { href: "/surat/36", key: "1", label: "Yasin" },
-  { href: "/surat/18", key: "2", label: "Al-Kahf" },
-  { href: "/surat/67", key: "3", label: "Al-Mulk" },
-  { href: "/surat/56", key: "4", label: "Al-Wāqi‘ah" },
-  { href: "/surat/55", key: "5", label: "Ar-Raḥmān" },
+  { href: "/alquran/surat/36", key: "1", label: "Yasin" },
+  { href: "/alquran/surat/18", key: "2", label: "Al-Kahf" },
+  { href: "/alquran/surat/67", key: "3", label: "Al-Mulk" },
+  { href: "/alquran/surat/56", key: "4", label: "Al-Wāqi‘ah" },
+  { href: "/alquran/surat/55", key: "5", label: "Ar-Raḥmān" },
 ];
 
 export const MENU_FOOTER = [

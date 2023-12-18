@@ -60,7 +60,7 @@ const DetailSurat = async ({ params: { id } }) => {
   };
 
   const handleSelectItem = (item) => {
-    router.push(`/surat/${item}`);
+    router.push(`/alquran/surat/${item}`);
   };
 
   return (
@@ -120,7 +120,7 @@ const DetailSurat = async ({ params: { id } }) => {
             </div>
 
             <div className="col-span-2 md:row-span-2 md:col-span-1 flex items-end md:items-start justify-end  ">
-              <Link href={`/tafsir/${id}`}>
+              <Link href={`/alquran/tafsir/${id}`}>
                 <div className="bg-yellow-60 text-green-90 rounded-md md:w-28 font-bold p-2 text-center text-sm hover:bg-yellow-30">
                   Lihat Tafsir
                 </div>
@@ -145,7 +145,7 @@ const DetailSurat = async ({ params: { id } }) => {
         <div className="mt-3 flex flex-col md:flex-row gap-2 text-white text-base justify-center ">
           {getDetailSurat.data.suratSebelumnya === false ? null : (
             <Link
-              href={`/surat/${getDetailSurat.data.suratSebelumnya.nomor}`}
+              href={`/alquran/surat/${getDetailSurat.data.suratSebelumnya.nomor}`}
               className="p-2 bg-green-30 rounded-lg h-10 flexCenter flex-1 hover:bg-green-50 "
             >
               <div className="flex flex-row gap-2">
@@ -158,7 +158,7 @@ const DetailSurat = async ({ params: { id } }) => {
 
           {getDetailSurat.data.suratSelanjutnya === false ? null : (
             <Link
-              href={`/surat/${getDetailSurat.data.suratSelanjutnya.nomor}`}
+              href={`/alquran/surat/${getDetailSurat.data.suratSelanjutnya.nomor}`}
               className="p-2 bg-green-30 rounded-lg h-10 flexCenter flex-1 hover:bg-green-50"
             >
               <div className="flex flex-row gap-2">
