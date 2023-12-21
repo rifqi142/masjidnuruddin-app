@@ -1,10 +1,11 @@
 import React from "react";
+import MasjidSwiper from "@/components/Home/MasjidSwiper";
 
 const Home = async () => {
   return (
     <>
       <div>
-        <h1>INI ADALAH PAGE UTAMA NEXT JS</h1>
+        <MasjidSwiper />
       </div>
     </>
   );

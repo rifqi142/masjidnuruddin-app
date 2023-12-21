@@ -314,6 +314,10 @@
   justify-content: center;
 }
 
+.swiper-image {
+  height: 83vh;
+}
+
 @media screen and (max-width: 768px) {
   .slow-animate-marquee {
     animation: marquee 30s linear infinite;

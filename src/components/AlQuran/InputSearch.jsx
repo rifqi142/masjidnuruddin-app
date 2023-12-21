@@ -12,7 +12,7 @@ const InputSearch = ({ onSearch }) => {
       <div className="flex justify-center mx-8 md:mx-10 md:pl-0">
         <input
           placeholder="Surat apa yang mau anda baca? (contoh: Al-Fatihah)"
-          className="p-3 max-w-5xl rounded-lg text-sm content-center
+          className="p-3 max-w-5xl rounded-lg text-sm contentnv-center
           focus:outline-none focus:shadow-xl w-full"
           onChange={handleInputChange}
         />

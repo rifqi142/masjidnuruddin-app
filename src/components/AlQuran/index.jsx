@@ -58,25 +58,26 @@ const AlQuran = () => {
         <AyatPilihan />
         <br /> <br />
       </div>
-
-      {filteredData.length ? (
-        <AlQuranList api={{ data: filteredData }} />
-      ) : (
-        <div className="text-center mt-5 flex flex-col items-center mb-5">
-          <Image
-            src="/not-found.png"
-            alt="Not Found"
-            width={200}
-            height={200}
-            className=""
-          />
-          <h1 className="text-2xl font-bold">Keyword Tidak Ditemukan</h1>
-          <p>
-            Silahkan gunakan keyword yang lebih spesifik seperti Al-fatihah,
-            Ar-rahman, Al-waqi'ah
-          </p>
-        </div>
-      )}
+      <div className="overflow-y-auto h-full">
+        {filteredData.length ? (
+          <AlQuranList api={{ data: filteredData }} />
+        ) : (
+          <div className="text-center my-20 flex flex-col items-center ">
+            <Image
+              src="/not-found.png"
+              alt="Not Found"
+              width={200}
+              height={200}
+              className=""
+            />
+            <h1 className="text-2xl font-bold">Keyword Tidak Ditemukan</h1>
+            <p>
+              Silahkan gunakan keyword yang lebih spesifik seperti Al-fatihah,
+              Ar-rahman, Al-waqi'ah
+            </p>
+          </div>
+        )}
+      </div>
     </>
   );
 };
