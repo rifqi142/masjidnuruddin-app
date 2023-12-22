@@ -51,7 +51,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         green: {
-          10: "#C5FCEE",
+          10: "#E5FAF1",
           15: "#009855",
           20: "#4EAF9B",
           25: "#047C6A",
@@ -61,6 +61,7 @@ module.exports = {
           90: "#145C6A",
           100: "#255262",
           120: "#2F4858",
+          150: "#00CC65",
         },
         gray: {
           10: "#EEEEEE",

@@ -15,3 +15,16 @@ export const getPrayerTimesResponse = async (currentYear, currentMonth) => {
   const prayerTimes = await response.json();
   return prayerTimes;
 };
+
+export const getDateHijriahResponse = async (
+  currentDay,
+  currentMonth,
+  currentYear
+) => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL3}/${currentDay}-${currentMonth}-${currentYear}`
+  );
+
+  const dateHijriah = await response.json();
+  return dateHijriah.data;
+};
