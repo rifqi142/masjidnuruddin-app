@@ -41,7 +41,7 @@ const MasjidSwiper = () => {
                 <div className="absolute top-0 left-0 w-full h-full">
                   <div className="text-white px-20 mt-28">
                     <div className="title" data-swiper-parallax="-500">
-                      <h3 className="text-lg md:text-4xl font-bold">
+                      <h3 className="text-lg md:text-4xl font-bold text-brown-10">
                         {image.textTitle}
                       </h3>
                     </div>

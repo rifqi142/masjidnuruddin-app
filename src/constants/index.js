@@ -1,7 +1,6 @@
 export const NAV_LINKS = [
   { href: "/", key: "Beranda", label: "BERANDA" },
   { href: "/", key: "Tentang Kami", label: "TENTANG KAMI" },
-  { href: "/", key: "Infaq Masjid", label: "INFAQ MASJID" },
   { href: "/", key: "Program Dakwah", label: "PROGRAM DAKHWAH" },
   { href: "/", key: "Kajian ", label: "KAJIAN" },
   {

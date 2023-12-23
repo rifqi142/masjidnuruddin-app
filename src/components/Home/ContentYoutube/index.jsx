@@ -6,7 +6,7 @@ import React from "react";
 const ContentYoutube = () => {
   return (
     <>
-      <section className="youtube-content w-full p-20 ">
+      <section className="bg-home-gradient w-full p-20 ">
         <div className="mb-8">
           <h3 className="text-brown-10 text-xl font-semibold">
             <Link

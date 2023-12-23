@@ -12,7 +12,6 @@ const PrayerTime = async () => {
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
   const currentDate = today.toISOString().split("T")[0];
-
   //  waktu sholat
   const prayerTimes = await getPrayerTimesResponse(currentYear, currentMonth);
   const prayerTimesToday = prayerTimes.find((prayerTimes) => {
@@ -37,6 +36,26 @@ const PrayerTime = async () => {
     "Jumat",
     "Sabtu",
   ];
+
+  // mendapatkan bulan
+  const month = dayObject.getMonth();
+  const months = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
+  ];
+  const monthName = months[month];
+
+  const formattedDate = `${currentDay} ${monthName}, ${currentYear}`;
 
   // function untuk menambahkan waktu adzan
   const addMinutes = (time, minutes) => {
@@ -66,7 +85,7 @@ const PrayerTime = async () => {
           Waktu Sholat Harian Masjid Nurrudin
         </h1>
         <h3 className="text-lg mt-2 font-semibold">
-          {dayName}, {prayerTimesToday.tanggal} &nbsp;
+          {dayName}, {formattedDate} &nbsp;
           <span className="text-green-150 text-base font-bold">
             ({dateHijriah.hijri.day}, {dateHijriah.hijri.month.en},{" "}
             {dateHijriah.hijri.year})
@@ -92,75 +111,148 @@ const PrayerTime = async () => {
                         scope="col"
                         className="py-3 px-10 text-base font-bold tracking-wider text-left text-green-30 uppercase"
                       >
-                        Nama Sholat
+                        <div className="flex flex-col items-center">
+                          <Image
+                            src="/name-shalat.png"
+                            alt="name-shalat"
+                            width={40}
+                            height={40}
+                            className="rounded-lg mr-1 transform scaleX(-1)"
+                          />
+                          <span>Nama Sholat</span>
+                        </div>
+                      </th>
+
+                      <th
+                        scope="col"
+                        className="py-3 px-10 text-base font-bold tracking-wider text-left text-green-30 uppercase"
+                      >
+                        <div className="flex flex-col items-center">
+                          <Image
+                            src="/adzan.png"
+                            alt="adzan"
+                            width={40}
+                            height={40}
+                            className="rounded-lg mr-1 transform scaleX(-1)"
+                          />
+                          <span>Waktu Adzan</span>
+                        </div>
                       </th>
                       <th
                         scope="col"
                         className="py-3 px-10 text-base font-bold tracking-wider text-left text-green-30 uppercase"
                       >
-                        Waktu Adzan
-                      </th>
-                      <th
-                        scope="col"
-                        className="py-3 px-10 text-base font-bold tracking-wider text-left text-green-30 uppercase"
-                      >
-                        Waktu Sholat
+                        <div className="flex flex-col items-center">
+                          <Image
+                            src="/time-shalat.png"
+                            alt="time-shalat"
+                            width={40}
+                            height={40}
+                            className="rounded-lg mr-1 transform scaleX(-1)"
+                          />
+                          <span>Waktu Sholat</span>
+                        </div>
                       </th>
                     </tr>
                   </thead>
                   <tbody className="bg-green-10 divide-y divide-gray-200">
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap">
-                        Subuh
+                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap flex items-center">
+                        <div className="flex-none pr-2">
+                          <Image
+                            src="/sun-subuh.png"
+                            alt="sun-subuh"
+                            width={30}
+                            height={30}
+                            className="rounded-lg mr-1"
+                          />
+                        </div>
+                        <span>Subuh</span>
                       </td>
-                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesToday?.shubuh} WIB
                       </td>
-                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesTodayWithAddMinutes?.shubuh} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20">
-                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
-                        Dzuhur
+                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap flex items-center">
+                        <div className="flex-none pr-2">
+                          <Image
+                            src="/sun-dzuhur.png"
+                            alt="sun-dzuhur"
+                            width={25}
+                            height={25}
+                            className="rounded-lg mr-1"
+                          />
+                        </div>
+                        <span>Dzuhur</span>
                       </td>
-                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesToday?.dzuhur} WIB
                       </td>
-                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesTodayWithAddMinutes?.dzuhur} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Ashar
+                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap flex items-center">
+                        <div className="flex-none pr-2">
+                          <Image
+                            src="/sun-ashr.png"
+                            alt="sun-ashar"
+                            width={25}
+                            height={25}
+                            className="rounded-lg mr-1"
+                          />
+                        </div>
+                        <span>Ashar</span>
                       </td>
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap dark:text-white text-center">
                         {prayerTimesToday?.ashr}WIB
                       </td>
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap dark:text-white text-center">
                         {prayerTimesTodayWithAddMinutes?.ashr} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Maghrib
+                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap flex items-center">
+                        <div className="flex-none pr-2">
+                          <Image
+                            src="/sun-maghrib.png"
+                            alt="sun-maghrib"
+                            width={20}
+                            height={20}
+                            className="rounded-lg mr-1"
+                          />
+                        </div>
+                        <span>Maghrib</span>
                       </td>
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesToday?.magrib} WIB
                       </td>
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesTodayWithAddMinutes?.magrib} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Isya
+                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap flex items-center">
+                        <div className="flex-none pr-2">
+                          <Image
+                            src="/sun-isya.png"
+                            alt="sun-isya"
+                            width={20}
+                            height={20}
+                            className="rounded-lg mr-1"
+                          />
+                        </div>
+                        <span>Maghrib</span>
                       </td>
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesToday?.isya} WIB
                       </td>
-                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap text-center">
                         {prayerTimesTodayWithAddMinutes?.isya} WIB
                       </td>
                     </tr>
