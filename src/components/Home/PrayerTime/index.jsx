@@ -62,12 +62,12 @@ const PrayerTime = async () => {
   return (
     <section className="w-full my-5 items-center mt-20 mb-20">
       <div className="mx-60 px-10 items-center justify-center">
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-3xl font-bold">
           Waktu Sholat Harian Masjid Nurrudin
         </h1>
-        <h3 className="text-base mt-2 font-semibold">
+        <h3 className="text-lg mt-2 font-semibold">
           {dayName}, {prayerTimesToday.tanggal} &nbsp;
-          <span className="text-green-150 text-sm font-bold">
+          <span className="text-green-150 text-base font-bold">
             ({dateHijriah.hijri.day}, {dateHijriah.hijri.month.en},{" "}
             {dateHijriah.hijri.year})
           </span>
@@ -108,26 +108,26 @@ const PrayerTime = async () => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-green-10 divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                  <tbody className="bg-green-10 divide-y divide-gray-200">
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium  whitespace-nowrap">
                         Subuh
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
                         {prayerTimesToday?.shubuh} WIB
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
                         {prayerTimesTodayWithAddMinutes?.shubuh} WIB
                       </td>
                     </tr>
-                    <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <tr className="hover:bg-green-20">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
                         Dzuhur
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
                         {prayerTimesToday?.dzuhur} WIB
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium whitespace-nowrap">
                         {prayerTimesTodayWithAddMinutes?.dzuhur} WIB
                       </td>
                     </tr>
@@ -135,32 +135,32 @@ const PrayerTime = async () => {
                       <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Ashar
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {prayerTimesToday?.ashr}WIB
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {prayerTimesTodayWithAddMinutes?.ashr} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Maghrib
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {prayerTimesToday?.magrib} WIB
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {prayerTimesTodayWithAddMinutes?.magrib} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20 dark:hover:bg-gray-700">
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Isya
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {prayerTimesToday?.isya} WIB
                       </td>
-                      <td className="py-4 px-10 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="py-4 px-10 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {prayerTimesTodayWithAddMinutes?.isya} WIB
                       </td>
                     </tr>

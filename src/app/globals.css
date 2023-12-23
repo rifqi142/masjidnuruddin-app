@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
 
 *,
 *::before,
@@ -316,6 +317,10 @@
 
 .swiper-image {
   height: 83vh;
+}
+
+.youtube-content {
+  background: linear-gradient(90deg, #262626 56%, #2b2b2b 57%);
 }
 
 @media screen and (max-width: 768px) {
