@@ -6,7 +6,7 @@ import React from "react";
 const ContentYoutube = () => {
   return (
     <>
-      <section className="bg-home-gradient w-full p-20 ">
+      <section className="bg-home-gradient w-full p-4 md:p-20 ">
         <div className="mb-8">
           <h3 className="text-brown-10 text-xl font-semibold">
             <Link
@@ -16,7 +16,7 @@ const ContentYoutube = () => {
               Masjid Nuruddin 78 TV
             </Link>
           </h3>
-          <h4 className="text-white text-3xl mt-2 font-semibold">
+          <h4 className="text-white text-xl md:text-3xl mt-2 font-semibold">
             Video Kegiatan Masjid Nuruddin Meruya Selatan.
           </h4>
         </div>
@@ -33,7 +33,7 @@ const ContentYoutube = () => {
               <h4 className="mt-3 text-brown-10 text-base font-semibold text-justify">
                 {content.textTitle}
               </h4>
-              <p className="mt-3 text-white text-base leading-6 text-justify">
+              <p className="mt-3 text-white text-base leading-6 md:text-justify">
                 {content.textSubtitle}
               </p>
             </Link>

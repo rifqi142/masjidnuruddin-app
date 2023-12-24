@@ -1,3 +1,10 @@
+import layanan1 from "../../public/service-sholat.png";
+import layanan2 from "../../public/service-kajian.png";
+import layanan3 from "../../public/service-sedekah.png";
+import layanan4 from "../../public/service-charger.png";
+import layanan5 from "../../public/service-food.png";
+import layanan6 from "../../public/service-ambulance.png";
+
 export const mosqueService = [
   // lambang sajadah
   {
@@ -19,7 +26,7 @@ export const mosqueService = [
   {
     image: layanan3,
     alt: "layanan-3",
-    textTitle: "Pengelolaan Zakat, Infaq, Sedekah & Wakaf",
+    textTitle: "Pengelolaan ZISWAF",
     textSubtitle:
       "Penerimaan pembayaran zakat, infaq, sedekah, wakaf, fidyah dari jamaah Masjid Nuruddin maupun masyarakat luas, untuk kemudian didayagunakan dalam berbagai program yang memberi manfaat maksimal bagi masyarakat, umat, dan bangsa, serta untuk operasional dan perawatan Masjid Nuruddin",
   },
@@ -27,7 +34,7 @@ export const mosqueService = [
   {
     image: layanan4,
     alt: "layanan-4",
-    textTitle: "Layanan Stop Kontak atau Tempat Charger Gratis",
+    textTitle: "Stop Kontak atau Tempat Charger Gratis",
     textSubtitle:
       "Layanan stop kontak atau tempat charger gratis di berbagai sisi Masjid Nuruddin. Fasilitas ini tersedia untuk mengisi daya baterai handphone, laptop, dan perangkat lainnya. Disediakan khusus untuk para supir ojek online, pengunjung Masjid Nuruddin, dan masyarakat luas yang membutuhkan layanan pengisian daya gratis",
   },
@@ -35,7 +42,7 @@ export const mosqueService = [
   {
     image: layanan5,
     alt: "layanan-5",
-    textTitle: "Pantry",
+    textTitle: "Jum'at Berkah",
     textSubtitle:
       "Mengkoordinir program Jum'at Berkah yang dilaksanakan setiap hari Jum'at, dengan membagikan makanan dan minuman gratis kepada para jamaah Masjid Nuruddin dan masyarakat luas yang membutuhkan. Program ini dilaksanakan dengan kerjasama dengan berbagai pihak, termasuk para donatur dan relawan.",
   },

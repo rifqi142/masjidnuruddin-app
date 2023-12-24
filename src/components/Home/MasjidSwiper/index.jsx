@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Autoplay, Pagination, Parallax } from "swiper/modules";
-import { images } from "@/libs/image";
+import { images } from "@/libs/swiper-content";
 
 const MasjidSwiper = () => {
   return (
@@ -27,21 +27,22 @@ const MasjidSwiper = () => {
           }}
           modules={[Autoplay, Pagination, Parallax]}
           parallax={true}
-          className="w-full swiper-image"
+          className="swiper-image"
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-full w-full">
+              <div className="">
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  className="block h-full w-full object-cover parallax-bg"
+                  className="w-full h-full object-cover parallax-bg"
                   data-swiper-parallax="-23%"
+                  layout="fill"
                 />
                 <div className="absolute top-0 left-0 w-full h-full">
-                  <div className="text-white px-20 mt-28">
+                  <div className="text-white px-4 md:px-20 mt-12 md:mt-28">
                     <div className="title" data-swiper-parallax="-500">
-                      <h3 className="text-lg md:text-4xl font-bold text-brown-10">
+                      <h3 className="text-2xl md:text-4xl font-bold text-brown-10">
                         {image.textTitle}
                       </h3>
                     </div>

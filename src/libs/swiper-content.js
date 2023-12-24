@@ -9,7 +9,7 @@ export const images = [
   {
     src: first,
     alt: "first",
-    textTitle: "Masjid Nuruddin Meruya Selatan",
+    textTitle: "Masjid Nuruddin",
     textSubtitle:
       "Jl. H. Sa'aba No. 7, RT.088/RW.03, Kelurahan Meruya Selatan, Kecamatan Kembangan, Jakarta Barat, DKI Jakarta 11650",
   },
@@ -35,7 +35,7 @@ export const images = [
   {
     src: fifth,
     alt: "fifth",
-    textTitle: "Membangun Keharmonisan, Mengokohkan Iman",
+    textTitle: "Merajut Keimanan Bersama-sama",
     textSubtitle: "Langkah Bersama dalam Merajut Keimanan yang Kokoh",
   },
 ];

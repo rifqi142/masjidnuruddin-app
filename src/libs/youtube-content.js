@@ -9,7 +9,7 @@ export const youtubeContent = [
     textTitle: "Belajar Ilmu Tajwid Bersama Ustadz Najmudin Anwar",
     textSubtitle:
       "Belajar Ilmu Tajwid dari dasar pada tanggal 1 juni 2023 bersama Ustadz Najmudin Anwar #IlmuTajwid #MasjidNuruddin",
-    link: "https://www.youtube.com/watch?v=E1-X_6Jb-rg&t=991s",
+    link: "https://www.youtube.com/watch?v=E1-X_6Jb-rg",
   },
   {
     image: kajian2,
@@ -17,7 +17,7 @@ export const youtubeContent = [
     textTitle: "Kajian Rutin Malam Jumat Bersama KH. Muhammad Misja Al-Ayas",
     textSubtitle:
       "Kajian Rutin Kitab Safinatun Najah dan Kitab Ta'lim Muta'allim pada tanggal 24 Agustus 2023 bersama KH. Muhammad Misja Al-Ayas #Kajian #MasjidNuruddin",
-    link: "https://www.youtube.com/watch?v=kzmAQoe18FY&t=1386s",
+    link: "https://www.youtube.com/watch?v=kzmAQoe18FY",
   },
   {
     image: kajian3,
@@ -25,6 +25,6 @@ export const youtubeContent = [
     textTitle: "Kuliah Subuh Minggu Pagi Bersama Ustadz H. Akhmad Syamsurizal",
     textSubtitle:
       "Kuliah Subuh Minggu Pagi pada tanggal 1 Juni 2023 bersama Ustadz H. Akhmad Syamsurizal #KuliahSubuh #MasjidNuruddin",
-    link: "https://www.youtube.com/watch?v=eUepZVhIrEw&t=150s",
+    link: "https://www.youtube.com/watch?v=eUepZVhIrEw",
   },
 ];

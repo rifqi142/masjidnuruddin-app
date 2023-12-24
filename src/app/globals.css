@@ -337,4 +337,7 @@
     height: 3rem;
     font-size: 1rem;
   }
+  .swiper-image {
+    height: 45vh;
+  }
 }

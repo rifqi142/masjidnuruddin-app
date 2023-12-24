@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="py-2 bg-dark-30 p-2 md:p-2">
-      <div className="flex justify-between mt-10 container mx-auto flex-col md:flex-row lg:px-20 xl:px-40">
+    <footer className="p-4 bg-dark-30">
+      <div className="flex justify-between mb-10 mt-10 flex-col md:flex-row md:px-16">
         <div className="flex-1">
           <div className="flex flex-row">
             <Image
@@ -89,9 +89,6 @@ const Footer = () => {
           </div>
           <div className="flex1- ml-8"></div>
         </div>
-      </div>
-      <div className="bg-dark-40 p-3 mt-3 text-center text-white text-sm md:text-base">
-        <p>&copy; 2023 Masjid Nuruddin. All Rights Reserved.</p>
       </div>
     </footer>
   );
