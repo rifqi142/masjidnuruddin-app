@@ -1,13 +1,14 @@
 export const NAV_LINKS = [
-  { href: "/", key: "Beranda", label: "BERANDA" },
+  { href: "/", key: "Beranda", label: "BERANDA", className: "active" },
   { href: "/", key: "Tentang Kami", label: "TENTANG KAMI" },
+  //  berisi hari apa aja ada kegiatan di masjid
   { href: "/", key: "Program Dakwah", label: "PROGRAM DAKHWAH" },
+  // pindah ke youtube channel
   { href: "/", key: "Kajian ", label: "KAJIAN" },
   {
     href: "/alquran",
     key: "Baca Al-Qur'an",
     label: "BACA AL-QURAN",
-    className: "active",
   },
 ];
 

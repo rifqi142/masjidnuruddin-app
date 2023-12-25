@@ -193,7 +193,7 @@ const PrayerTime = async () => {
                         {prayerTimesToday?.dzuhur} WIB
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap text-center">
-                        {prayerTimesTodayWithAddMinutes?.dzuhur} WIB
+                        {prayerTimesTodayWithAddMinutes?.dzuhur}0 WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20">
