@@ -104,10 +104,10 @@
     @apply bg-green-30 px-8 py-4 text-white transition-all hover:bg-green-50;
   }
   .btn_dark_green_2 {
-    @apply bg-green-30 px-4 py-4 text-white transition-all hover:bg-green-50;
+    @apply bg-green-30 px-4 py-2 text-white transition-all hover:bg-green-50;
   }
   .btn_dark_green_outline2 {
-    @apply border-gray-20 bg-green-90 px-2 py-2 text-white;
+    @apply border-gray-20 bg-green-90 px-4 py-2 text-white;
   }
   .btn_dark_green_outline {
     @apply border-gray-20 bg-green-90 px-8 py-5 text-white;
@@ -327,6 +327,11 @@
 
 .bg-home-gradient {
   background: linear-gradient(90deg, #262626 56%, #2b2b2b 57%);
+}
+
+.btn-mobile {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem;
 }
 
 @media screen and (max-width: 768px) {

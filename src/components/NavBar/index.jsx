@@ -3,7 +3,8 @@ import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Button from "../Button";
+import ButtonNav from "../Button";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -55,7 +56,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <nav className="w-full px-6 lg:px-20 z-30 py-2 sticky top-0 bg-white">
+      <nav className="w-full px-2 lg:px-20 z-30 py-2 sticky top-0 bg-white">
         <div className="flexBetween">
           <Link href="/">
             <Image
@@ -75,7 +76,7 @@ const NavBar = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`regular-16 xl:regular-14 text-green-30 flexCenter 
+                    className={`regular-16 md:regular-14 text-green-30 flexCenter 
             cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold ${
               link.className === "active" ? "border-b-2 border-b-green-20" : ""
             }`}
@@ -86,7 +87,7 @@ const NavBar = () => {
                   <Link
                     href={link.href}
                     onClick={() => handleClick(link.href)}
-                    className={`regular-16 xl:regular-14 text-green-30 flexCenter 
+                    className={`regular-16 md:regular-14 text-green-30 flexCenter 
             cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold ${
               link.className === "active" ? "border-b-2 border-b-green-20" : ""
             }`}
@@ -99,7 +100,7 @@ const NavBar = () => {
           </ul>
 
           <div className="lg:flexCenter hidden">
-            <Button
+            <ButtonNav
               type="button"
               title="Donasi"
               icon="/donasi.svg"
@@ -116,26 +117,32 @@ const NavBar = () => {
           />
         </div>
 
-        {/* Mobile Menu */}
+        {/* md with menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white mt-5">
+          <div className="lg:hidden bg-white absolute top-full left-0 w-full z-50 ">
             {NAV_LINKS.map((link) => (
               <Link
                 href={link.href}
                 key={link.key}
-                className={`block regular-16 xl:regular-14 text-green-30 py-2 px-2 
-                transition-all hover:text-green-50 hover:font-bold`}
+                className={`block regular-14 md:regular-16 text-green-30 py-2 px-2 
+        transition-all hover:text-green-50 hover:font-bold`}
               >
                 {link.label}
               </Link>
             ))}
             <div className="flex-center py-2 px-1">
-              <Button
-                type="button"
-                title="Donasi"
-                icon="/donasi.svg"
-                variant="btn_dark_green_2"
-              />
+              <Button className="bg-green-30 rounded-full hover:bg-green-50">
+                <Image
+                  src="/donasi.svg"
+                  alt="donasi"
+                  width={18}
+                  height={18}
+                  className="mr-2"
+                />
+                <label className="regular-14 md:regular-16 text-white">
+                  Donasi
+                </label>
+              </Button>
             </div>
           </div>
         )}
