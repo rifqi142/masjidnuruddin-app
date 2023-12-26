@@ -1,10 +1,19 @@
 export const NAV_LINKS = [
   { href: "/", key: "Beranda", label: "BERANDA", className: "active" },
-  { href: "/", key: "Tentang Kami", label: "TENTANG KAMI" },
+  { href: "/tentang-kami", key: "Tentang Kami", label: "TENTANG KAMI" },
   //  berisi hari apa aja ada kegiatan di masjid
-  { href: "/", key: "Program Dakwah", label: "PROGRAM DAKHWAH" },
+  {
+    href: "/program-dakhwah",
+    key: "Program Dakhwah",
+    label: "PROGRAM DAKHWAH",
+  },
   // pindah ke youtube channel
-  { href: "/", key: "Kajian ", label: "KAJIAN" },
+  {
+    href: "https://www.youtube.com/@masjidnuruddin78tv/videos",
+    key: "Kajian ",
+    label: "KAJIAN",
+    external: true,
+  },
   {
     href: "/alquran",
     key: "Baca Al-Qur'an",

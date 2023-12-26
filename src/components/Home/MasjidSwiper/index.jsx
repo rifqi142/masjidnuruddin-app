@@ -15,6 +15,7 @@ const MasjidSwiper = () => {
       <div className="swiper">
         <Swiper
           slidesPerView={1}
+          grabCursor={true}
           rewind={true}
           spaceBetween={30}
           loop={true}

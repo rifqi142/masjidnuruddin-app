@@ -103,6 +103,12 @@
   .btn_dark_green {
     @apply bg-green-30 px-8 py-4 text-white transition-all hover:bg-green-50;
   }
+  .btn_dark_green_2 {
+    @apply bg-green-30 px-4 py-4 text-white transition-all hover:bg-green-50;
+  }
+  .btn_dark_green_outline2 {
+    @apply border-gray-20 bg-green-90 px-2 py-2 text-white;
+  }
   .btn_dark_green_outline {
     @apply border-gray-20 bg-green-90 px-8 py-5 text-white;
   }
