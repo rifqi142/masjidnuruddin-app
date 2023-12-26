@@ -17,12 +17,10 @@ const NavBar = () => {
   };
 
   const handleClick = (href) => {
-    if (router.pathname === href) {
-      router.push(href).then(() => router.reload());
-    } else {
-      router.push(href);
-    }
+    router.push(href);
+    setIsMenuOpen(false);
   };
+  const currentPath = router.pathname;
 
   useEffect(() => {
     const marquee = document.querySelector(".animate-marquee");
@@ -56,7 +54,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <nav className="w-full px-2 lg:px-20 z-30 py-2 sticky top-0 bg-white">
+      <nav className="w-full px-2 lg:px-20 z-30 py-2 sticky top-0 bg-white md:shadow-xl">
         <div className="flexBetween">
           <Link href="/">
             <Image
@@ -67,19 +65,18 @@ const NavBar = () => {
               className="block"
             />
           </Link>
-
-          <ul className="hidden h-full gap-6 lg:flex">
+          {/*  md without menu */}
+          <ul className="navigation-header hidden h-full gap-6 lg:flex">
             {NAV_LINKS.map((link) => (
               <React.Fragment key={link.key}>
+                {/*  agar membuat halaman baru ketika ada link youtube */}
                 {link.external ? (
                   <Link
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`regular-16 md:regular-14 text-green-30 flexCenter 
-            cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold ${
-              link.className === "active" ? "border-b-2 border-b-green-20" : ""
-            }`}
+                    className="regular-16 md:regular-14 text-green-30 flexCenter 
+            cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold"
                   >
                     {link.label}
                   </Link>
@@ -87,10 +84,8 @@ const NavBar = () => {
                   <Link
                     href={link.href}
                     onClick={() => handleClick(link.href)}
-                    className={`regular-16 md:regular-14 text-green-30 flexCenter 
-            cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold ${
-              link.className === "active" ? "border-b-2 border-b-green-20" : ""
-            }`}
+                    className="regular-16 md:regular-14 text-green-30 flexCenter 
+            cursor-pointer pb-1.5 relative transition-all hover:text-green-50 hover:font-bold"
                   >
                     {link.label}
                   </Link>
@@ -98,7 +93,6 @@ const NavBar = () => {
               </React.Fragment>
             ))}
           </ul>
-
           <div className="lg:flexCenter hidden">
             <ButtonNav
               type="button"
@@ -126,6 +120,7 @@ const NavBar = () => {
                 key={link.key}
                 className={`block regular-14 md:regular-16 text-green-30 py-2 px-2 
         transition-all hover:text-green-50 hover:font-bold`}
+                onClick={() => handleClick(link.href)}
               >
                 {link.label}
               </Link>

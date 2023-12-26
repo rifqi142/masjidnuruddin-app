@@ -1,6 +1,10 @@
 export const NAV_LINKS = [
   { href: "/", key: "Beranda", label: "BERANDA", className: "active" },
-  { href: "/tentang-kami", key: "Tentang Kami", label: "TENTANG KAMI" },
+  {
+    href: "/tentang-kami",
+    key: "Tentang Kami",
+    label: "TENTANG KAMI",
+  },
   //  berisi hari apa aja ada kegiatan di masjid
   {
     href: "/program-dakhwah",
@@ -10,9 +14,10 @@ export const NAV_LINKS = [
   // pindah ke youtube channel
   {
     href: "https://www.youtube.com/@masjidnuruddin78tv/videos",
-    key: "Kajian ",
+    key: "Kajian",
     label: "KAJIAN",
     external: true,
+    // Do not set the active class for external links
   },
   {
     href: "/alquran",
