@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { prayerOfficer } from "@/libs/schedule-office";
 import Image from "next/image";
 
@@ -11,17 +11,36 @@ import "swiper/css/pagination";
 import { Autoplay, Parallax } from "swiper/modules";
 
 const OfficeSchedule = () => {
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      // Ganti nilai 768 dengan lebar layar yang sesuai untuk beralih ke tata letak ponsel
+      const newSlidesPerView = window.innerWidth >= 768 ? 3 : 1;
+      setSlidesPerView(newSlidesPerView);
+    };
+
+    // Panggil fungsi saat komponen dimuat dan lebar layar berubah
+    updateSlidesPerView();
+    window.addEventListener("resize", updateSlidesPerView);
+
+    // Bersihkan event listener saat komponen dibongkar
+    return () => {
+      window.removeEventListener("resize", updateSlidesPerView);
+    };
+  }, []); // Empty dependency array agar useEffect hanya dijalankan sekali saat komponen dimuat
+
   return (
     <section className="w-full">
-      <div className="p-20">
+      <div className="p-4 md:p-20">
         <div className="flex justify-center items-center">
-          <h2 className="text-xl border-2 rounded-full px-2 py-2 border-green-30 font-semibold">
+          <h2 className="text-base border-2 rounded-full px-2 py-2 border-green-30 bg-green-10 text-green-30 font-semibold">
             Petugas Harian Imam Sholat Fardu
           </h2>
         </div>
-        <div className="mt-10 swiper2">
+        <div className="mt-5 md:mt-10 h-20 md:h-30">
           <Swiper
-            slidesPerView={3}
+            slidesPerView={slidesPerView}
             grabCursor={true}
             rewind={true}
             spaceBetween={20}
@@ -32,17 +51,10 @@ const OfficeSchedule = () => {
             }}
             modules={[Autoplay, Parallax]}
             parallax={true}
-            responsive={{
-              // Menampilkan 3 slide ketika lebar layar lebih besar atau sama dengan 768px (ukuran perangkat tablet)
-              768: {
-                slidesPerView: 3,
-              },
-            }}
-            className=""
           >
             {prayerOfficer.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="flex flex-row gap-3 w-full border-2 rounded-xl border-green-30 py-2 px-2">
+                <div className="flex flex-row gap-3 w-full border-2 rounded-xl border-green-30 py-2 px-2 bg-green-10">
                   <Image
                     src={item.photoProfile}
                     alt="Office Prayer Profile"
@@ -52,7 +64,9 @@ const OfficeSchedule = () => {
                     data-swiper-parallax="-23%"
                   />
                   <div className="px-5 w-max">
-                    <h2 className="text-lg font-semibold">{item.title}</h2>
+                    <h2 className="text-base font-semibold text-green-30">
+                      {item.title}
+                    </h2>
                     <h2 className="text-base font-medium">{item.officer}</h2>
                   </div>
                 </div>

@@ -14,7 +14,8 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Masjid Nuruddin",
-  description: "Masjid Nuruddin Website",
+  description:
+    "Selamat Datang di Masjid Nuruddin Jakarta Barat. Menikmati keindahan spiritual di Masjid ini yang berlokasi di Jl. H. Sa'aba No.7, RT.8/RW.3, Kelurahan Meruya Selatan, Kecamatan Kembangan, Kota Jakarta Barat. Temukan ketenangan dan keberkahan dalam suasana penuh kehormatan dan damai di Masjid Nuruddin.",
 };
 
 export default function RootLayout({ children }) {
