@@ -14,7 +14,7 @@ export const prayerOfficer = [
   },
   {
     title: "Imam Hari Senin",
-    officer: "Ust. H. Ahmad Syahroni, Spd.I",
+    officer: "Ust. H. A. Syahroni, Spd.I",
     photoProfile: photoProfile2,
   },
   {

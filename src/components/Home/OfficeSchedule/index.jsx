@@ -32,13 +32,13 @@ const OfficeSchedule = () => {
 
   return (
     <section className="w-full">
-      <div className="p-4 md:p-20">
+      <div className="p-4">
         <div className="flex justify-center items-center">
           <h2 className="text-base border-2 rounded-full px-2 py-2 border-green-30 bg-green-10 text-green-30 font-semibold">
             Petugas Harian Imam Sholat Fardu
           </h2>
         </div>
-        <div className="mt-5 md:mt-10 h-20 md:h-30">
+        <div className="mt-5 h-20 md:h-30">
           <Swiper
             slidesPerView={slidesPerView}
             grabCursor={true}
