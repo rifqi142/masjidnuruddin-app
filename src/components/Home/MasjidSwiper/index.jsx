@@ -31,14 +31,13 @@ const MasjidSwiper = () => {
           className="swiper-image"
         >
           {images.map((image, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="h-max">
               <div className="">
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover parallax-bg"
+                  className="absolute w-full h-full object-cover parallax-bg"
                   data-swiper-parallax="-23%"
-                  layout="fill"
                 />
                 <div className="absolute top-0 left-0 w-full h-full">
                   <div className="text-white px-4 md:px-20 mt-12 md:mt-28">

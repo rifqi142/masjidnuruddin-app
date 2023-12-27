@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 export default async function handler(req, res) {
   const { id } = req.query;
   const apiUrl = `https://equran.id/api/v2/surat/${id}`;

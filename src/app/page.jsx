@@ -3,6 +3,7 @@ import MasjidSwiper from "@/components/Home/MasjidSwiper";
 import MosqueService from "@/components/Home/MosqueService";
 import PrayerTime from "@/components/Home/PrayerTime";
 import ContentYoutube from "@/components/Home/ContentYoutube";
+import OfficeSchedule from "@/components/Home/OfficeSchedule";
 import Donation from "@/components/Home/Donation";
 
 const Home = async () => {
@@ -13,6 +14,7 @@ const Home = async () => {
         <MosqueService />
         <PrayerTime />
         <ContentYoutube />
+        <OfficeSchedule />
         <Donation />
       </div>
     </>
