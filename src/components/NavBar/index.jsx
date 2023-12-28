@@ -20,7 +20,6 @@ const NavBar = () => {
     router.push(href);
     setIsMenuOpen(false);
   };
-  const currentPath = router.pathname;
 
   useEffect(() => {
     const marquee = document.querySelector(".animate-marquee");
@@ -94,12 +93,14 @@ const NavBar = () => {
             ))}
           </ul>
           <div className="lg:flexCenter hidden">
-            <ButtonNav
-              type="button"
-              title="Donasi"
-              icon="/donasi.svg"
-              variant="btn_dark_green"
-            />
+            <Link href="/donasi" aria-label="donasi">
+              <ButtonNav
+                type="button"
+                title="Donasi"
+                icon="/donasi.svg"
+                variant="btn_dark_green"
+              />
+            </Link>
           </div>
           <Image
             src={isMenuOpen ? "/close-menu.svg" : "/menu-open.svg"}
@@ -126,18 +127,24 @@ const NavBar = () => {
               </Link>
             ))}
             <div className="flex-center py-2 px-1">
-              <Button className="bg-green-30 rounded-full hover:bg-green-50">
-                <Image
-                  src="/donasi.svg"
-                  alt="donasi"
-                  width={18}
-                  height={18}
-                  className="mr-2"
-                />
-                <label className="regular-14 md:regular-16 text-white">
-                  Donasi
-                </label>
-              </Button>
+              <Link
+                href="/donasi"
+                aria-label="donasi"
+                onClick={() => handleClick("/donasi")}
+              >
+                <Button className="bg-green-30 rounded-full hover:bg-green-50">
+                  <Image
+                    src="/donasi.svg"
+                    alt="donasi"
+                    width={18}
+                    height={18}
+                    className="mr-2"
+                  />
+                  <label className="regular-14 md:regular-16 text-white">
+                    Donasi
+                  </label>
+                </Button>
+              </Link>
             </div>
           </div>
         )}

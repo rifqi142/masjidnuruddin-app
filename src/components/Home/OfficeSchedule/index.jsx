@@ -15,20 +15,17 @@ const OfficeSchedule = () => {
 
   useEffect(() => {
     const updateSlidesPerView = () => {
-      // Ganti nilai 768 dengan lebar layar yang sesuai untuk beralih ke tata letak ponsel
       const newSlidesPerView = window.innerWidth >= 768 ? 3 : 1;
       setSlidesPerView(newSlidesPerView);
     };
 
-    // Panggil fungsi saat komponen dimuat dan lebar layar berubah
     updateSlidesPerView();
     window.addEventListener("resize", updateSlidesPerView);
 
-    // Bersihkan event listener saat komponen dibongkar
     return () => {
       window.removeEventListener("resize", updateSlidesPerView);
     };
-  }, []); // Empty dependency array agar useEffect hanya dijalankan sekali saat komponen dimuat
+  }, []);
 
   return (
     <section className="w-full">

@@ -316,6 +316,16 @@
   background-image: url("/twitter-after.svg");
 }
 
+.tiktok {
+  background-image: url("/tiktok.svg");
+  height: 25px;
+  width: 25px;
+}
+
+.tiktok:hover {
+  background-image: url("/tiktok-after.svg");
+}
+
 .audio-player::-webkit-media-controls-panel {
   background-color: #ffc107;
   justify-content: center;
@@ -354,5 +364,8 @@
   }
   .swiper-image {
     height: 45vh;
+  }
+  .responsive-image {
+    width: 25vh;
   }
 }

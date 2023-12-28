@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="p-4 bg-dark-30">
-      <div className="flex justify-between mb-10 mt-10 flex-col md:flex-row md:px-16">
+      <div className="flex justify-between mb-5 mt-5 md:mt-10 flex-col md:flex-row md:px-16">
         <div className="flex-1">
           <div className="flex flex-row">
             <Image
@@ -35,13 +35,26 @@ const Footer = () => {
           </h4>
           <ul className="flex flex-col gap-3 ">
             {MENU_FOOTER.map((menu) => (
-              <Link
-                href={menu.href}
-                key={menu.key}
-                className="text-sm  text-white hover:underline"
-              >
-                {menu.label}
-              </Link>
+              <React.Fragment key={menu.key}>
+                {menu.external ? (
+                  <Link
+                    href={menu.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm  text-white hover:underline"
+                  >
+                    {menu.label}
+                  </Link>
+                ) : (
+                  <Link
+                    href={menu.href}
+                    key={menu.key}
+                    className="text-sm  text-white hover:underline"
+                  >
+                    {menu.label}
+                  </Link>
+                )}
+              </React.Fragment>
             ))}
           </ul>
         </div>
@@ -76,18 +89,32 @@ const Footer = () => {
               masjidnuruddin78@gmail.com
             </a>
           </p>
-          <div className="flex mt-4 justify-center md:justify-start">
-            <a href="#" className="mr-4" aria-label="instagram">
+          <div className="flex mt-5 justify-center md:justify-start">
+            <a
+              href="https://www.instagram.com/masjidnuruddin78official/"
+              target="_blank"
+              className="mr-4"
+              aria-label="instagram"
+            >
               <div className="social-media instagram"></div>
             </a>
-            <a href="#" className="mr-4" aria-label="facebook">
+            <a
+              href="https://www.facebook.com/masjid.nuruddin.9"
+              target="_blank"
+              className="mr-4"
+              aria-label="facebook"
+            >
               <div className="social-media facebook"></div>
             </a>
-            <a href="#">
-              <div className="social-media twitter" aria-label="twitter"></div>
+            <a
+              href="https://www.tiktok.com/@masjidnuruddin78official?fbclid=IwAR2Ul7MMhcpq_YLeT6DS_jKw8_HkXSox0l1HDIFrljNZWrLIFHiI6Z6zqcI"
+              target="_blank"
+              className="mr-4"
+              aria-label="tiktok"
+            >
+              <div className="social-media tiktok" aria-label="tiktok"></div>
             </a>
           </div>
-          <div className="flex1- ml-8"></div>
         </div>
       </div>
     </footer>

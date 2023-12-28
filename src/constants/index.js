@@ -5,19 +5,16 @@ export const NAV_LINKS = [
     key: "Tentang Kami",
     label: "TENTANG KAMI",
   },
-  //  berisi hari apa aja ada kegiatan di masjid
   {
-    href: "/program-dakhwah",
-    key: "Program Dakhwah",
-    label: "PROGRAM DAKHWAH",
+    href: "/program-dakwah",
+    key: "Program Dakwah",
+    label: "PROGRAM DAKWAH",
   },
-  // pindah ke youtube channel
   {
     href: "https://www.youtube.com/@masjidnuruddin78tv/videos",
     key: "Kajian",
     label: "KAJIAN",
     external: true,
-    // Do not set the active class for external links
   },
   {
     href: "/alquran",
@@ -36,10 +33,14 @@ export const AYAT_KHUSUS = [
 
 export const MENU_FOOTER = [
   { href: "/", key: "1", label: "Beranda" },
-  { href: "/", key: "2", label: "Tentang Kami" },
-  { href: "/", key: "3", label: "Program Dakhwah" },
-  { href: "/", key: "4", label: "Kajian" },
-  { href: "/", key: "5", label: "Baca Al-Qur'an" },
-  { href: "/", key: "6", label: "Infaq Masjid" },
-  { href: "/", key: "7", label: "Donasi" },
+  { href: "/tentang-kami", key: "2", label: "Tentang Kami" },
+  { href: "/program-dakwah", key: "3", label: "Program Dakwah" },
+  {
+    href: "https://www.youtube.com/@masjidnuruddin78tv/videos",
+    key: "4",
+    label: "Kajian",
+    external: true,
+  },
+  { href: "/alquran", key: "5", label: "Baca Al-Qur'an" },
+  { href: "/donasi", key: "7", label: "Donasi" },
 ];
