@@ -55,7 +55,7 @@ const NavBar = () => {
       </div>
       <nav className="w-full px-2 lg:px-20 z-30 py-2 sticky top-0 bg-white md:shadow-xl">
         <div className="flexBetween">
-          <Link href="/">
+          <Link href="/" onClick={handleClick}>
             <Image
               src="/logo-masjid.png"
               alt="logo"

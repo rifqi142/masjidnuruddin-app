@@ -1,4 +1,4 @@
-import photoProfile from "../../public/dummy-photo.jpg";
+
 import photoProfile1 from "../../public/profile-drs-haman.png";
 import photoProfile2 from "../../public/profile-ust-roni.png";
 import photoProfile3 from "../../public/profile-jawahir.png";
