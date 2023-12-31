@@ -42,12 +42,22 @@ const MasjidSwiper = () => {
                 <div className="absolute top-0 left-0 w-full h-full">
                   <div className="text-white px-4 md:px-20 mt-12 md:mt-28">
                     <div className="title" data-swiper-parallax="-500">
-                      <h3 className="text-2xl md:text-4xl font-bold text-brown-10">
+                      <h3
+                        className="text-2xl md:text-4xl font-bold text-brown-10"
+                        data-aos="fade-up"
+                        data-aos-duration="3000"
+                      >
                         {image.textTitle}
                       </h3>
                     </div>
                     <div className="subtitle mt-5" data-swiper-parallax="-300">
-                      <p className="text-sm md:text-lg">{image.textSubtitle}</p>
+                      <p
+                        className="text-sm md:text-lg"
+                        data-aos="fade-up"
+                        data-aos-duration="3000"
+                      >
+                        {image.textSubtitle}
+                      </p>
                     </div>
                   </div>
                 </div>

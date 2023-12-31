@@ -5,8 +5,16 @@ const Donation = () => {
   return (
     <section className="w-full md:p-14 bg-green-10">
       <div className="flex flex-col w-max py-5 md:py-0 mx-auto">
-        <div className="md:border-2 rounded-xl bg-white flex md:flex-row shadow-md shadow-green-20/60">
-          <div className="capitalize mt-5 px-10 md:px-4 mb-5 text-base md:text-3xl font-semibold text-yellow-100">
+        <div
+          className="md:border-2 rounded-xl bg-white flex md:flex-row shadow-md shadow-green-20/60"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <div
+            className="capitalize mt-5 px-10 md:px-4 mb-5 text-base md:text-3xl font-semibold text-yellow-100"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <h2>Berikan Donasi Terbaik Anda,</h2>
             <h2>Transfer Melalui :</h2>
             <Image
@@ -15,8 +23,14 @@ const Donation = () => {
               width={150}
               height={150}
               className="mt-5 block md:hidden"
+              data-aos="fade-up"
+              data-aos-duration="2000"
             />
-            <div className="uppercase mt-5 md:mt-10 text-base md:text-3xl leading-tight font-semibold text-green-15">
+            <div
+              className="uppercase mt-5 md:mt-10 text-base md:text-3xl leading-tight font-semibold text-green-15"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <h2>Bank DKI Syariah</h2>
               <h3>
                 No. Rekening :{" "}
@@ -26,7 +40,11 @@ const Donation = () => {
             </div>
           </div>
 
-          <div className="hidden md:grid items-center justify-items-end pl-10 pr-5 mt-24">
+          <div
+            className="hidden md:grid items-center justify-items-end pl-10 pr-5 mt-24"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <Image
               alt="logo-bank-dki"
               src="/logo-bank.png"

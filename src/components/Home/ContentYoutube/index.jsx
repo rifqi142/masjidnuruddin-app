@@ -7,7 +7,7 @@ const ContentYoutube = () => {
   return (
     <>
       <section className="bg-home-gradient w-full p-4 md:p-20 ">
-        <div className="mb-8">
+        <div className="mb-8" data-aos="fade-up" data-aos-duration="2000">
           <h3 className="text-brown-10 text-xl font-semibold">
             <Link
               href="https://www.youtube.com/@masjidnuruddin78tv"
@@ -22,7 +22,13 @@ const ContentYoutube = () => {
         </div>
         <div className="grid grid-rows-1 md:grid-cols-3 gap-5 mx-auto">
           {youtubeContent.map((content, index) => (
-            <Link key={index} href={content.link} target="_blank">
+            <Link
+              key={index}
+              href={content.link}
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <Image
                 src={content.image}
                 alt={content.alt}

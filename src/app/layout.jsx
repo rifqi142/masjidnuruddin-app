@@ -3,8 +3,8 @@ import NavBar from "@/components/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Copyright from "@/components/Footer/Copyright";
+import { AOSInit } from "@/libs/aos";
 
-// Select a weight from the available options
 const poppins = Poppins({
   weight: ["400", "900"],
   display: "swap",
@@ -21,6 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <AOSInit />
       <body
         className={`${poppins.className} `}
         suppressContentEditableWarning={true}

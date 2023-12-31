@@ -38,13 +38,17 @@ const AlQuran = () => {
   return (
     <>
       <div className="bg-alquran h-full relative">
-        <div className="flex flex-col items-center">
+        <div
+          className="flex flex-col items-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <Image
             src="/kaligrafi-quran.png"
             alt="Kaligrafi Quran"
             width={250}
             height={250}
-            className="mt-5 "
+            className="mt-5"
           />
           <Image
             src="/arab-quran.png"
@@ -62,13 +66,12 @@ const AlQuran = () => {
         {filteredData.length ? (
           <AlQuranList api={{ data: filteredData }} />
         ) : (
-          <div className="text-center my-20 flex flex-col items-center ">
+          <div className="text-center my-20 flex flex-col items-center">
             <Image
               src="/not-found.png"
               alt="Not Found"
               width={200}
               height={200}
-              className=""
             />
             <h1 className="text-2xl font-bold">Keyword Tidak Ditemukan</h1>
             <p>

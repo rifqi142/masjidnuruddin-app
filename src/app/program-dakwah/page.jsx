@@ -8,7 +8,11 @@ const ProgramDakwah = () => {
       <section className="w-full">
         <div className="p-4 md:p-20">
           <div className="text-justify">
-            <h2 className="text-xl md:text-3xl font-medium text-center">
+            <h2
+              className="text-xl md:text-3xl font-medium text-center"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               Program Dakwah Masjid Nuruddin
             </h2>
             <hr className="my-2 border-t-2 border-green-30 w-full" />
@@ -18,6 +22,10 @@ const ProgramDakwah = () => {
               <div
                 key={index}
                 className="border-2 border-green-30 rounded-md w-full"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay="50"
+                data-aos-easing="ease-in-out-quad"
               >
                 <div className="px-2 py-2 ml-3 block md:flex">
                   <Image

@@ -81,13 +81,26 @@ const PrayerTime = async () => {
   return (
     <section className="w-full my-5 items-center mt-5 md:mt-20 mb-5 md:mb-20 p-4 md:p-0">
       <div className="flex flex-col md:items-center">
-        <h1 className="text-2xl md:text-3xl font-bold">
+        <h1
+          className="text-2xl md:text-3xl font-bold"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           Waktu Sholat Harian Masjid Nurrudin
         </h1>
-        <h3 className="text-base md:text-lg mt-2 font-semibold">
+        <h3
+          className="text-base md:text-lg mt-2 font-semibold"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           {dayName}, {formattedDate}
         </h3>
-        <p className="text-green-150 text-sm font-bold">
+        <p
+          className="text-green-150 text-sm font-bold"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-easing="linear"
+        >
           ({dateHijriah.hijri.day}, {dateHijriah.hijri.month.en},{" "}
           {dateHijriah.hijri.year} H)
         </p>
@@ -99,8 +112,14 @@ const PrayerTime = async () => {
           width={380}
           height={380}
           className="rounded-lg flex-none hidden lg:block"
+          data-aos="fade-right"
+          data-aos-duration="2000"
         />
-        <div className="w-full md:max-w-2xl md:mx-3">
+        <div
+          className="w-full md:max-w-2xl md:mx-3"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <div className="overflow-x-auto shadow-lg sm:rounded-lg">
             <div className="inline-block min-w-full align-middle">
               <div className="overflow-hidden">

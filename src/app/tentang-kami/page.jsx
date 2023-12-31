@@ -8,21 +8,37 @@ const AboutUs = () => {
         <div className="flex align-center justify-center">
           <div className="px-0 md:px-36">
             <div className="text-justify">
-              <h2 className="text-xl md:text-3xl font-medium">
+              <h2
+                className="text-xl md:text-3xl font-medium text-center"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 Struktur Pengurus dan Pembina DKM Nuruddin
               </h2>
               <hr className="my-2 border-t-2 border-green-30 w-full" />
-              <p className="text-lg">
+              <p
+                className="text-lg"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 Masjid Nuruddin Mempunyai pengurus untuk menjalankan operasional
                 dan program-program Masjid yang disebut Dewan Kemakmuran Masjid
                 Nuruddin atau DKM Nuruddin
               </p>
-              <p className="text-lg mt-4">
+              <p
+                className="text-lg mt-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 DKM Nuruddin periode 2022 - 2027 telah dikukuhkan dan dipilih
                 Jama'ah masjid pada Septermber 2022 melalui musyawarah rapat
                 pengurus masjid periode sebelumnya dan jamaah Masjid Nuruddin
               </p>
-              <p className="mt-4 text-lg">
+              <p
+                className="mt-4 text-lg"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 Berikut adalah struktur pengurus dan pembina DKM Nuruddin,
                 susunan organisasi Masjid meliputi Pembina, Penasehat, Ketua,
                 Koordinasi Mejalis Taklim, Wakil Ketua, Sekretaris, Bendahara.
@@ -40,6 +56,8 @@ const AboutUs = () => {
                 width={700}
                 height={600}
                 className="mt-5"
+                data-aos="zoom-in"
+                data-aos-duration="2000"
               />
             </div>
           </div>

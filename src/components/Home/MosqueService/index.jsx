@@ -5,7 +5,7 @@ import Image from "next/image";
 const MosqueService = () => {
   return (
     <section className="bg-home-gradient w-full p-4 md:p-20">
-      <div>
+      <div data-aos="fade-up" data-aos-duration="3000">
         <h5 className="text-lg text-brown-10">Layanan</h5>
         <h3 className="text-2xl md:text-3xl text-white mt-3 font-semibold">
           Layanan Masjid Nuruddin.
@@ -13,7 +13,7 @@ const MosqueService = () => {
       </div>
       <div className="grid grid-rows-1 md:grid-cols-3 gap-10 mx-auto mt-14">
         {mosqueService.map((service, index) => (
-          <div key={index}>
+          <div key={index} data-aos="fade-up" data-aos-duration="2000">
             <Image
               src={service.image}
               alt={service.alt}

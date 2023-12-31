@@ -31,7 +31,11 @@ const OfficeSchedule = () => {
     <section className="w-full">
       <div className="p-4">
         <div className="flex justify-center items-center">
-          <h2 className="text-base border-2 rounded-full px-2 py-2 border-green-30 bg-green-10 text-green-30 font-semibold">
+          <h2
+            className="text-base border-2 rounded-full px-2 py-2 border-green-30 bg-green-10 text-green-30 font-semibold"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             Petugas Harian Imam Sholat Fardu
           </h2>
         </div>
@@ -51,7 +55,11 @@ const OfficeSchedule = () => {
           >
             {prayerOfficer.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="flex flex-row gap-3 w-full border-2 rounded-xl border-green-30 py-2 px-2 bg-green-10">
+                <div
+                  className="flex flex-row gap-3 w-full border-2 rounded-xl border-green-30 py-2 px-2 bg-green-10"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                >
                   <Image
                     src={item.photoProfile}
                     alt="Office Prayer Profile"

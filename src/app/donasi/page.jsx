@@ -13,18 +13,30 @@ const Donasi = async () => {
         <div className="flex align-center justify-center">
           <div className="px-0 md:px-36">
             <div className="text-justify">
-              <h2 className="text-xl md:text-3xl font-medium">
+              <h2
+                className="text-xl md:text-3xl font-medium"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 Berikan Donasi Terbaik Anda
               </h2>
               <hr className="my-2 border-t-2 border-green-30 w-full" />
             </div>
             <div className="mt-5">
-              <h1 className="text-3xl md:text-4xl flexEnd mt-3 flex-wrap text-justify font-medium">
+              <h1
+                className="text-3xl md:text-4xl flexEnd mt-3 flex-wrap text-justify font-medium"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 <span className="text-center text-[justify-last] leading-normal">
                   {getAyatSpecific.teksArab}
                 </span>
               </h1>
-              <p className="mt-5 text-xs md:text-base text-center italic leading-tight">
+              <p
+                className="mt-5 text-xs md:text-base text-center italic leading-tight"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 "{getAyatSpecific.teksIndonesia}"
                 <br />
                 <span>
@@ -33,13 +45,21 @@ const Donasi = async () => {
               </p>
             </div>
             <div className="mt-8">
-              <h3 className="text-base md:text-lg text-justify">
+              <h3
+                className="text-base md:text-lg text-justify"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 Bagi para jama'ah yang ingin menginfaqkan hartanya untuk
                 kemakmuran Masjid Nuruddin Meruya Selatan, donasi bisa
                 disalurkan melalui berikut:
               </h3>
             </div>
-            <div className="flex flex-col md:flex-row justify-center align-center gap-5">
+            <div
+              className="flex flex-col md:flex-row justify-center align-center gap-5"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <div className="mt-5 md:mt-12">
                 <Image
                   src="/logo-bank.png"
@@ -58,10 +78,18 @@ const Donasi = async () => {
                 <h3>a/n: Masjid Nuruddin</h3>
               </div>
             </div>
-            <div className="text-left md:text-center text-xs md:text-sm">
+            <div
+              className="text-left md:text-center text-xs md:text-sm"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <p>Konfirmasi infaq dapat melalui: 0856 9726 8979</p>
             </div>
-            <div className="mt-5 md:mt-10">
+            <div
+              className="mt-5 md:mt-10"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <h3 className="text-base md:text-lg text-justify">
                 Donasi juga dapat disalurkan melalui kotak-kotak infaq yang
                 tersebar di Masjid Nuruddin Meruya Selatan.
