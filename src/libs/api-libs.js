@@ -7,9 +7,18 @@ export const getAlquranResponse = async (resource, query) => {
   return alquran;
 };
 
+// export const getPrayerTimesResponse = async (currentYear, currentMonth) => {
+//   const response = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_URL2}/${currentYear}/${currentMonth}.json`
+//   );
+
+//   const prayerTimes = await response.json();
+//   return prayerTimes;
+// };
+
 export const getPrayerTimesResponse = async (currentYear, currentMonth) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL2}/${currentYear}/${currentMonth}.json`
+    `${process.env.NEXT_PUBLIC_API_URL2}/${currentYear}/${currentMonth}`
   );
 
   const prayerTimes = await response.json();

@@ -10,20 +10,25 @@ const PrayerTime = async () => {
   const today = new Date();
   const currentDay = today.getDate();
   const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth() + 1;
+  const currentMonth = (today.getMonth() + 1).toString().padStart(2, "0");
   const currentDate = today.toISOString().split("T")[0];
-  //  waktu sholat
+  //  getPrayerTimesResponse
   const prayerTimes = await getPrayerTimesResponse(currentYear, currentMonth);
-  const prayerTimesToday = prayerTimes.find((prayerTimes) => {
-    return prayerTimes.tanggal === currentDate;
-  });
 
+  // jadwal sholat
+  const schedulePrayer = prayerTimes.data.jadwal;
+
+  // jadwal hari ini
+  const prayerTimesToday = schedulePrayer.find(
+    (item) => item.date === currentDate
+  );
   // tanggal hijriah
   const dateHijriah = await getDateHijriahResponse(
     currentDay,
     currentMonth,
     currentYear
   );
+
   // mendapatkan hari
   const dayObject = new Date(currentDate);
   const dayOfWeek = dayObject.getDay();
@@ -36,6 +41,7 @@ const PrayerTime = async () => {
     "Jumat",
     "Sabtu",
   ];
+  const dayName = daysOfWeek[dayOfWeek];
 
   // mendapatkan bulan
   const month = dayObject.getMonth();
@@ -71,13 +77,13 @@ const PrayerTime = async () => {
   // menambahkan 5 menit sesudah adzan menggunakan mapping
   const prayerTimesTodayWithAddMinutes = {
     ...prayerTimesToday,
-    shubuh: addMinutes(prayerTimesToday?.shubuh, 5),
+    subuh: addMinutes(prayerTimesToday?.subuh, 5),
     dzuhur: addMinutes(prayerTimesToday?.dzuhur, 5),
-    ashr: addMinutes(prayerTimesToday?.ashr, 5),
-    magrib: addMinutes(prayerTimesToday?.magrib, 5),
+    ashar: addMinutes(prayerTimesToday?.ashar, 5),
+    maghrib: addMinutes(prayerTimesToday?.maghrib, 5),
     isya: addMinutes(prayerTimesToday?.isya, 5),
   };
-  const dayName = daysOfWeek[dayOfWeek];
+
   return (
     <section className="w-full my-5 items-center mt-5 md:mt-20 mb-5 md:mb-20 p-4 md:p-0">
       <div className="flex flex-col md:items-center">
@@ -189,10 +195,10 @@ const PrayerTime = async () => {
                         <span className="px-2">Subuh</span>
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap text-center">
-                        {prayerTimesToday?.shubuh} WIB
+                        {prayerTimesToday?.subuh} WIB
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap text-center">
-                        0{prayerTimesTodayWithAddMinutes?.shubuh} WIB
+                        0{prayerTimesTodayWithAddMinutes?.subuh} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20">
@@ -229,10 +235,10 @@ const PrayerTime = async () => {
                         <span>Ashar</span>
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap dark:text-white text-center">
-                        {prayerTimesToday?.ashr}WIB
+                        {prayerTimesToday?.ashar}WIB
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap dark:text-white text-center">
-                        {prayerTimesTodayWithAddMinutes?.ashr} WIB
+                        {prayerTimesTodayWithAddMinutes?.ashar} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20">
@@ -249,10 +255,10 @@ const PrayerTime = async () => {
                         <span className="px-1">Maghrib</span>
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap text-center">
-                        {prayerTimesToday?.magrib} WIB
+                        {prayerTimesToday?.maghrib} WIB
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap text-center">
-                        {prayerTimesTodayWithAddMinutes?.magrib} WIB
+                        {prayerTimesTodayWithAddMinutes?.maghrib} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20">

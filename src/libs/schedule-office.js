@@ -1,4 +1,3 @@
-
 import photoProfile1 from "../../public/profile-drs-haman.png";
 import photoProfile2 from "../../public/profile-ust-roni.png";
 import photoProfile3 from "../../public/profile-jawahir.png";
@@ -19,7 +18,7 @@ export const prayerOfficer = [
   },
   {
     title: "Imam Hari Selasa",
-    officer: "Jawahir",
+    officer: "Drs. Jawahir",
     photoProfile: photoProfile3,
   },
   {
