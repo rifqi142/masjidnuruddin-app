@@ -63,7 +63,7 @@ const PrayerTime = async () => {
 
   const formattedDate = `${currentDay} ${monthName}, ${currentYear}`;
 
-  // function untuk menambahkan waktu adzan
+  // Function untuk menambahkan waktu adzan dengan format HH:mm
   const addMinutes = (time, minutes) => {
     const timeParts = time.split(":");
     const hoursInMinutes = parseInt(timeParts[0]) * 60;
@@ -71,7 +71,10 @@ const PrayerTime = async () => {
     const totalMinutes = hoursInMinutes + minutesInMinutes;
     const newHours = Math.floor(totalMinutes / 60);
     const newMinutes = totalMinutes % 60;
-    return `${newHours}:${newMinutes}`;
+
+    const formattedHours = newHours.toString();
+    const formattedMinutes = newMinutes.toString().padStart(2, "0");
+    return `${formattedHours}:${formattedMinutes}`;
   };
 
   // menambahkan 5 menit sesudah adzan menggunakan mapping
@@ -99,7 +102,7 @@ const PrayerTime = async () => {
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          {dayName}, {formattedDate}
+          {dayName}, {formattedDate} M
         </h3>
         <p
           className="text-green-150 text-sm font-bold"
@@ -218,7 +221,7 @@ const PrayerTime = async () => {
                         {prayerTimesToday?.dzuhur} WIB
                       </td>
                       <td className="py-4 px-1 md:px-10 text-base font-medium whitespace-nowrap text-center">
-                        {prayerTimesTodayWithAddMinutes?.dzuhur}0 WIB
+                        {prayerTimesTodayWithAddMinutes?.dzuhur} WIB
                       </td>
                     </tr>
                     <tr className="hover:bg-green-20">
