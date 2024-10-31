@@ -17,6 +17,7 @@ const Footer = () => {
               className="mr-4 w-16"
             />
             <h1 className="text-white flexCenter text-lg md:text-xl uppercase">
+              Dewan Kemakmuran <br />
               Masjid Nuruddin
             </h1>
           </div>
